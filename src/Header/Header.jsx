@@ -21,13 +21,13 @@ export default function Header() {
   }
 
   return (
-    <header className="position-sticky top-0 start-0 w-100 z-2 py-2">
+    <header className="position-sticky top-0 start-0 w-100 z-2 py-3">
       <div className="container">
         <nav className="d-flex justify-content-center align-items-center">
-          <ul className="w-100 m-0 list-unstyled mx-auto d-lg-flex justify-content-lg-around align-items-lg-center">
+          <ul className="w-75 m-0 list-unstyled mx-auto d-lg-flex justify-content-lg-around align-items-lg-center">
             {navOptions.map((navOp, i) => {
               if (i < 3) return (
-                <li key={i} className={`${activeIndex === i && "active"} d-none d-lg-block text-capitalize nav-item fw-500`} onClick={() => changeActiveIndex(i)}>
+                <li key={i} className={`${activeIndex === i && "active"} d-none d-lg-block text-capitalize nav-item fw-bold`} onClick={() => changeActiveIndex(i)}>
                   <a href={`#${navOp}`} className="nav-link">{navOp}</a>
                 </li>
               )
@@ -48,7 +48,7 @@ export default function Header() {
             </li>
             {navOptions.map((navOp, i) => {
               if (i >=3 ) return (
-                <li key={i} className={`${activeIndex === i && "active"} d-none d-lg-block text-capitalize nav-item fw-500`} onClick={() => changeActiveIndex(i)}>
+                <li key={i} className={`${activeIndex === i && "active"} d-none d-lg-block text-capitalize nav-item fw-bold`} onClick={() => changeActiveIndex(i)}>
                   <a href={`#${navOp}`} className="nav-link">{navOp}</a>
                 </li>
               )
