@@ -41,18 +41,19 @@ export default function Header() {
                   );
               })}
               <li className="text-center">
-                <a
-                  href="/"
-                  className="logo text-primary text-capitalize fw-bold"
-                >
-                  medic care
-                  <span
-                    className="d-block"
-                    style={{ color: "#717275", fontSize: "12px" }}
+                <h1 className="logo text-primary text-capitalize fw-bold">
+                  <a
+                    href="/"
                   >
-                    health specialist
-                  </span>
-                </a>
+                    medic care
+                    <span
+                      className="d-block"
+                      style={{ color: "#717275", fontSize: "12px" }}
+                    >
+                      health specialist
+                    </span>
+                  </a>
+                </h1>
               </li>
               {navOptions.map((navOp, i) => {
                 if (i >= 3)
