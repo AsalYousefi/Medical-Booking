@@ -17,6 +17,10 @@ a {
     cursor: pointer !important;
 }
 
+.fw-500 {
+    font-weight: 500;
+}
+
 .logo {
     font-size: 24px;
 }
@@ -46,4 +50,12 @@ a {
 
 .open .bar:nth-child(3) {
     transform: rotate(-45deg) translate(6px, -6px);
+}
+
+nav ul li {
+    color: #717275;
+}
+
+.active {
+    color: #000;
 }
