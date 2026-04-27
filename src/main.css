@@ -1,7 +1,10 @@
+@import "./media-query.css";
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+    background-color: white;
 }
 
 body {
@@ -58,4 +61,14 @@ nav ul li {
 
 .active {
     color: #000;
+}
+
+/* about */
+
+
+
+.hero-section img {
+    height: 65vh;
+    object-fit: cover;
+    object-position: center top;
 }
