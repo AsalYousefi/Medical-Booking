@@ -1,0 +1,9 @@
+@media screen and (min-width: 992px) {
+    .hero-section {
+        height: 85vh !important;
+    }
+
+    .horizontal-nav {
+        width: 90% !important;
+    }
+}

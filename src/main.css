@@ -67,8 +67,18 @@ nav ul li {
 
 
 
-.hero-section img {
+.hero-section {
     height: 65vh;
+    inset: 0;
+}
+
+.hero-section img {
     object-fit: cover;
     object-position: center top;
+    transition: opacity .8s ease-in-out;
+    opacity: 0;
+}
+
+.hero-section img.active-img {
+    opacity: 1;
 }
