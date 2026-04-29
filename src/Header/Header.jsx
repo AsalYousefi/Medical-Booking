@@ -19,7 +19,7 @@ export default function Header() {
   }
 
   return (
-    <header className="position-sticky top-0 start-0 w-100 z-2 py-3 shadow-lg">
+    <header className="position-sticky top-0 start-0 w-100 z-2 py-3 shadow-lg bg-light">
       <div className="container">
         <div className="w-100 d-flex justify-content-center align-items-center">
           <nav className="horizontal-nav mx-auto">
@@ -87,7 +87,7 @@ export default function Header() {
         </div>
       </div>
       {isOpen && (
-        <div className="d-lg-none position-absolute z-3 w-100 bg-white start-0 top-100">
+        <div className="d-lg-none position-absolute z-3 w-100 bg-light start-0 top-100">
           <div className="container">
             <nav>
               <ul className="list-unstyled">
