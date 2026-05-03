@@ -6,4 +6,12 @@
     .horizontal-nav {
         width: 90% !important;
     }
+
+    .home-description {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        width: 50%;
+        height: auto;
+    }
 }

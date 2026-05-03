@@ -1,9 +1,9 @@
-import About from "./About";
+import Home from "./Home/Home";
 
 export default function MainSection() {
     return (
         <main>
-            <About />
+            <Home />
         </main>
     )
 }

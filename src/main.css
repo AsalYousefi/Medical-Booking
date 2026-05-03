@@ -1,10 +1,13 @@
 @import "./media-query.css";
 
+:root {
+    --gray: #717275;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-    background-color: white;
 }
 
 body {
@@ -16,12 +19,16 @@ a {
     text-decoration: none !important;
 }
 
+button {
+    background-color: transparent;
+}
+
 .pointer {
     cursor: pointer !important;
 }
 
 .fw-500 {
-    font-weight: 500;
+    font-weight: 500 !important;
 }
 
 .logo {
@@ -56,16 +63,14 @@ a {
 }
 
 nav ul li {
-    color: #717275;
+    color: var(--gray);
 }
 
 .active {
     color: #000;
 }
 
-/* about */
-
-
+/* home */
 
 .hero-section {
     height: 65vh;
@@ -81,4 +86,27 @@ nav ul li {
 
 .hero-section img.active-img {
     opacity: 1;
+}
+
+.home-title h2 {
+    font-size: 3rem;
+}
+
+.home-title span {
+    transition: opacity .5s ease-in-out, transform .8s ease-in-out;
+    opacity: 0;
+    transform: translateY(10px);
+}
+
+.home-title span.active-word {
+    opacity: 1;
+    transform: translateY(.655px);
+}
+
+.home p {
+    color: var(--gray);
+}
+
+.phone-number {
+    color: var(--gray);
 }
