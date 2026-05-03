@@ -14,4 +14,8 @@
         width: 50%;
         height: auto;
     }
+
+    .home-title h2 {
+        font-size: 3rem;
+    }
 }
