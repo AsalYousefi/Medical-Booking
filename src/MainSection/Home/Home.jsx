@@ -21,7 +21,7 @@ export default function Home() {
   });
 
   return (
-    <section className="home" id="home">
+    <section className="home mb-" id="home">
       <div className="container position-relative">
         <div className="hero-section position-relative">
           {images.map((img, i) => {
@@ -38,7 +38,7 @@ export default function Home() {
           })}
         </div>
 
-        <div className="home-description py-4 px-5 bg-white">
+        <div className="home-description py-sm-4 px-sm-5 bg-white">
           <div className="home-title position-relative py-2">
             <h2 className="fw-bold">
               Better
@@ -48,7 +48,7 @@ export default function Home() {
                     key={i}
                     className={`${
                       activeIndex === i && "active-word"
-                    } ms-3 position-absolute w-100 h-100 text-primary w-100 h-100`}
+                    } ms-3 position-absolute w-50 h-100 text-primary`}
                   >
                     {word}
                   </span>
