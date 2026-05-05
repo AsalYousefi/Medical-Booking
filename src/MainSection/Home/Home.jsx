@@ -21,7 +21,7 @@ export default function Home() {
   });
 
   return (
-    <section className="home mb-" id="home">
+    <section className="home" id="home">
       <div className="container position-relative">
         <div className="hero-section position-relative">
           {images.map((img, i) => {
@@ -38,7 +38,7 @@ export default function Home() {
           })}
         </div>
 
-        <div className="home-description py-sm-4 px-sm-5 bg-white">
+        <div className="home-texts p-3 p-sm-4 bg-white">
           <div className="home-title position-relative py-2">
             <h2 className="fw-bold">
               Better
@@ -60,11 +60,11 @@ export default function Home() {
             Medic Care is a Bootstrap 5 Template provided by TemplateMo website.
             Credits go to FreePik and RawPixel for images used in this template.
           </p>
-          <div className="d-flex align-items-center fw-500 mt-2">
-            <button className="text-uppercase text-primary border py-2" style={{width: "35%"}}>
+          <div className="d-flex align-items-center fw-500 mt-4">
+            <button className="text-uppercase text-primary border py-2" style={{width: "40%"}}>
               <a href="#about">learn more</a>
             </button>
-            <div className="mx-4 d-flex align-items-center phone-number">
+            <div className="ms-4 d-flex align-items-center phone-number">
               <CiMobile2 className="fs-4" />
               <span className="fs-5 mx-1">010-020-0340</span>
             </div>
