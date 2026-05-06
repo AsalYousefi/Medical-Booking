@@ -1,13 +1,13 @@
 @media screen and (min-width: 992px) {
     .hero-section {
-        height: 85vh !important;
+        height: 57vh !important;
     }
 
     .horizontal-nav {
         width: 90% !important;
     }
 
-    .home-description {
+    .home-texts {
         position: absolute;
         bottom: 0;
         right: 0;
@@ -17,5 +17,77 @@
 
     .home-title h2 {
         font-size: 3rem;
+    }
+
+    nav ul li,
+    .logo {
+        font-size: 20px;
+    }
+
+    .experience {
+        width: 350px !important;
+        height: 350px !important;
+    }
+
+}
+
+@media screen and (max-width: 576px) {
+    .phone-number svg,
+    .phone-number span,
+    .home button {
+        font-size: 12px !important;
+    }
+}
+
+@media screen and (min-width: 368px) {
+    .experience span.experience-number {
+        font-size: 8rem !important;
+    }
+
+    .experience span {
+        font-size: 25px;
+    }
+}
+
+@media screen and (min-width: 368px) and (max-width: 991px) {
+    .experience {
+        width: 320px !important;
+        height: 320px !important;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .about-texts {
+        width: 50% !important;
+    }
+
+    div.timeline:nth-child(even),
+    div.timeline:nth-child(even) .timeline-content {
+        flex-direction: row-reverse !important;
+    }
+
+    .vertical-line {
+        left: 49% !important;
+    }
+
+    div.timeline:nth-child(even) h3::after {
+        left: 99.8% !important;
+        right: auto !important;
+        border-color: transparent transparent transparent black !important;
+    }
+
+    div.timeline:nth-child(odd) .date {
+        text-align: end !important;
+    }
+
+}
+
+@media screen and (min-width: 576px) {
+    
+}
+
+@media screen and (min-width: 1200px) {
+    main p {
+        font-size: 24px !important;
     }
 }
