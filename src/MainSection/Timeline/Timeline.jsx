@@ -58,7 +58,7 @@ export default function Timeline() {
                             <span className="ms-1">{timeline.date}</span>
                         </div>
                         <div className="timeline-content d-flex justify-content-around w-100">
-                            <div className="d-flex align-items-center justify-content-center me-3 mx-md-auto shadow-lg icon bg-white rounded-circle text-primary">
+                            <div className="d-flex align-items-center justify-content-center mx-md-auto shadow-lg icon bg-white rounded-circle text-primary">
                                 {timeline.icon}
                             </div>
                             <div className="timeline-texts rounded-1 shadow-lg mt-3">

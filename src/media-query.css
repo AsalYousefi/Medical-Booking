@@ -1,3 +1,54 @@
+@media screen and (min-width: 368px) {
+    .experience span.experience-number {
+        font-size: 8rem !important;
+    }
+    
+    .experience span {
+        font-size: 25px;
+    }
+}
+
+@media screen and (min-width: 368px) and (max-width: 991px) {
+    .experience {
+        width: 320px !important;
+        height: 320px !important;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .phone-number svg,
+    .phone-number span,
+    .home button {
+        font-size: 12px !important;
+    }
+}
+
+@media screen and (min-width: 768px) {
+    .about-texts {
+        width: 50% !important;
+    }
+
+    div.timeline:nth-child(even),
+    div.timeline:nth-child(even) .timeline-content {
+        flex-direction: row-reverse !important;
+    }
+
+    .vertical-line {
+        left: 50% !important;
+    }
+
+    div.timeline:nth-child(even) h3::after {
+        left: 99.8% !important;
+        right: auto !important;
+        border-color: transparent transparent transparent black !important;
+    }
+
+    div.timeline:nth-child(odd) .date {
+        text-align: end !important;
+    }
+
+}
+
 @media screen and (min-width: 992px) {
     .hero-section {
         height: 57vh !important;
@@ -29,65 +80,27 @@
         height: 350px !important;
     }
 
-}
-
-@media screen and (max-width: 576px) {
-    .phone-number svg,
-    .phone-number span,
-    .home button {
-        font-size: 12px !important;
-    }
-}
-
-@media screen and (min-width: 368px) {
-    .experience span.experience-number {
-        font-size: 8rem !important;
+    .icon {
+        max-width: 80px !important;
     }
 
-    .experience span {
-        font-size: 25px;
-    }
-}
-
-@media screen and (min-width: 368px) and (max-width: 991px) {
-    .experience {
-        width: 320px !important;
-        height: 320px !important;
-    }
-}
-
-@media screen and (min-width: 768px) {
-    .about-texts {
-        width: 50% !important;
-    }
-
-    div.timeline:nth-child(even),
-    div.timeline:nth-child(even) .timeline-content {
-        flex-direction: row-reverse !important;
-    }
-
-    .vertical-line {
-        left: 49% !important;
-    }
-
-    div.timeline:nth-child(even) h3::after {
-        left: 99.8% !important;
-        right: auto !important;
-        border-color: transparent transparent transparent black !important;
-    }
-
-    div.timeline:nth-child(odd) .date {
-        text-align: end !important;
-    }
-
-}
-
-@media screen and (min-width: 576px) {
-    
 }
 
 @media screen and (min-width: 1200px) {
     main p {
         font-size: 24px !important;
     }
+
+    .timeline h3 {
+        font-size: 35px;
+    }
+
+    .icon {
+        max-width: 100px !important;
+    }
+
+    .icon > * {
+        font-size: 2.7rem !important;
+    }
+    
 }
