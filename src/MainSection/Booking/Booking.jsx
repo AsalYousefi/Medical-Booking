@@ -51,7 +51,7 @@ export default function Booking() {
             <div className="w-100 text-center">
               <button
                 type="submit"
-                className="submit-btn text-uppercase border-0 text-white my-3 py-2 px-4"
+                className="submit-btn text-uppercase border-0 text-white my-3"
               >
                 book now
               </button>
