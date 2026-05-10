@@ -1,5 +1,5 @@
 @import "./media-query.css";
-
+@import "bootstrap/dist/css/bootstrap.css";
 :root {
     --gray: #717275;
 }
@@ -183,4 +183,47 @@ nav ul li {
     left: 8.8%;
     background-color: var(--gray);
     opacity: .3;
+}
+
+/* testimonials */
+
+.testimonial-card {
+    height: 80vh;
+}
+
+.testimonial-card img {
+    width: 40px;
+    height: 40px;
+}
+
+.swiper-slide {
+    background-color: white;
+}
+
+.swiper-slide .rate svg {
+    fill: var(--gray);
+}
+
+.swiper-slide-active {
+    background-color: black !important;
+}
+
+.swiper-slide-active p {
+    color: white !important;
+}
+
+.swiper-slide-active .rate svg {
+    fill: white !important;
+}
+
+/* booking */
+
+.submit-btn {
+    font-weight: 600;
+    transition: .3s ease-in;
+    background-color: black;
+}
+
+.submit-btn:hover {
+    background-color: var(--bs-primary);
 }
