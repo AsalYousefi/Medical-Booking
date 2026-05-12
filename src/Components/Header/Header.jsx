@@ -1,22 +1,12 @@
 import { useState } from "react";
 
-export default function Header() {
-  const [activeIndex, setActiveIndex] = useState(0);
+export default function Header(props) {
 
   const [isOpen, setIsOpen] = useState(false);
 
-  const navOptions = [
-    "home",
-    "about",
-    "timeline",
-    "testimonials",
-    "booking",
-    "contact",
-  ];
-
-  function changeActiveIndex(i) {
-    setActiveIndex(i);
-  }
+  // function changeActiveIndex(i) {
+  //   setActiveIndex(i);
+  // }
 
   return (
     <header className="position-sticky top-0 start-0 w-100 z-3 py-3 py-lg-4 shadow-lg bg-light">
@@ -24,15 +14,15 @@ export default function Header() {
         <div className="w-100 d-flex justify-content-center align-items-center">
           <nav className="horizontal-nav mx-auto">
             <ul className="m-0 list-unstyled d-lg-flex justify-content-lg-around align-items-lg-center">
-              {navOptions.map((navOp, i) => {
+              {props.navOptions.map((navOp, i) => {
                 if (i < 3)
                   return (
                     <li
                       key={i}
                       className={`${
-                        activeIndex === i && "active"
+                        props.activeSection === navOp && "active"
                       } d-none d-lg-block text-capitalize nav-item fw-bold`}
-                      onClick={() => changeActiveIndex(i)}
+                      // onClick={() => changeActiveIndex(i)}
                     >
                       <a href={`#${navOp}`} className="nav-link">
                         {navOp}
@@ -54,15 +44,15 @@ export default function Header() {
                   </a>
                 </h1>
               </li>
-              {navOptions.map((navOp, i) => {
+              {props.navOptions.map((navOp, i) => {
                 if (i >= 3)
                   return (
                     <li
                       key={i}
                       className={`${
-                        activeIndex === i && "active"
+                        props.activeSection === navOp && "active"
                       } d-none d-lg-block text-capitalize nav-item fw-bold`}
-                      onClick={() => changeActiveIndex(i)}
+                      // onClick={() => changeActiveIndex(i)}
                     >
                       <a href={`#${navOp}`} className="nav-link">
                         {navOp}

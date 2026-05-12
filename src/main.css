@@ -12,6 +12,10 @@
     /* border: 1px solid black; */
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background-color: white;
     font-family: 'Open Sans', sans-serif;
@@ -21,6 +25,10 @@ main p {
     color: var(--gray);
     font-weight: 300;
     font-size: 20px;
+}
+
+section, footer {
+    scroll-margin-top: 120px;
 }
 
 a {
