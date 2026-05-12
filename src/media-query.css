@@ -15,6 +15,14 @@
     }
 }
 
+@media screen and (min-width: 576px) and (max-width: 991px) {
+    .booking input,
+    .booking textarea {
+        width: 85% !important;
+        margin-inline: auto !important;
+    }
+}
+
 @media screen and (max-width: 576px) {
     .phone-number svg,
     .phone-number span,
@@ -82,6 +90,33 @@
 
     .icon {
         max-width: 80px !important;
+    }
+
+    .booking input {
+        flex: 0 0 calc(45% - 0.5rem);
+        margin-inline: auto;
+        font-size: 1.5rem;
+    }
+
+    .booking textarea,
+    .booking div {
+        flex: 0 0 95%;
+        margin-inline: auto;
+        font-size: 1.5rem !important;
+    }
+
+    .submit-btn {
+        width: 15rem !important;
+    }
+
+    footer span,
+    footer p,
+    footer a {
+        font-size: 1.3rem;
+    }
+
+    .copyright {
+        margin-top: 8rem !important;
     }
 
 }

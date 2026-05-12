@@ -1,5 +1,6 @@
 @import "./media-query.css";
 @import "bootstrap/dist/css/bootstrap.css";
+
 :root {
     --gray: #717275;
 }
@@ -51,7 +52,7 @@ button {
     height: 19px;
 }
 
-.menu-btn > * {
+.menu-btn>* {
     width: 30px;
 }
 
@@ -154,7 +155,7 @@ nav ul li {
     max-width: 70px;
 }
 
-.icon > * {
+.icon>* {
     font-size: 2rem;
 }
 
@@ -222,11 +223,52 @@ nav ul li {
     font-weight: 600;
     transition: .3s ease-in;
     background-color: black;
-    padding-block: 12px;
-    width: 45%;
-    font-size: 1rem;
+    width: 9rem;
 }
 
 .submit-btn:hover {
     background-color: var(--bs-primary);
+}
+
+.booking input,
+.booking textarea {
+    color: #6c757d;
+}
+
+/* footer */
+
+footer {
+    padding-top: 7rem;
+    padding-bottom: 2rem;
+}
+
+footer span,
+footer p,
+footer a {
+    color: var(--gray);
+}
+
+footer a:hover {
+    color: var(--bs-primary);
+    opacity: 1 !important;
+}
+
+.socials {
+    max-width: 150px;
+}
+
+.socials > * {
+    font-size: 1.5rem;
+}
+
+.socials:hover a {
+    opacity: .6;
+}
+
+.copyright {
+    margin-top: 5rem;
+}
+
+.copyright-text {
+    font-size: 12px !important;
 }
