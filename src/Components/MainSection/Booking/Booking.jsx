@@ -1,8 +1,7 @@
-import { useEffect, useState } from "react";
-import { PiArticleNyTimesBold } from "react-icons/pi";
+import axios from "axios";
+import { useState } from "react";
 
 export default function Booking() {
-  const [patients, setPatients] = useState([]);
 
   const [formData, setFormData] = useState({
     fullName: "",
@@ -22,16 +21,23 @@ export default function Booking() {
     });
   }
 
-  function submitHandler(e) {
-    console.log(formData);
-    e.preventDefault();
-    setPatients((prev)=> [...prev, formData]);
-    resetData();
+  async function saveData() {
+    try {
+      await axios.post(
+        "http://localhost:3000/patients",
+        formData
+      )
+
+      resetData();
+    } catch (err) {
+      console.log(err.message);
+    }
   }
 
-  useEffect(() => {
-    console.log(patients)
-  }, [patients])
+  function submitHandler(e) {
+    e.preventDefault();
+    saveData();
+  }
 
   return (
     <section id="booking" className="booking">

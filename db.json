@@ -1,3 +1,29 @@
 {
-    "patients": []
+  "patients": [
+    {
+      "fullName": "عسل یوسفی",
+      "email": "asalyousefi8866@gmail.com",
+      "phone": "09309691987",
+      "date": "2026-05-28",
+      "message": "وقت مشاوره",
+      "id": "EwRXV5EvH7o"
+    },
+    {
+      "fullName": "عسل یوسفی",
+      "email": "asalyousefi8866@gmail.com",
+      "phone": "09309691987",
+      "date": "2026-05-28",
+      "message": "وقت مشاوره",
+      "id": "n_37MBvqfC4"
+    },
+    {
+      "fullName": "عسل یوسفی",
+      "email": "asalyousefi8866@gmail.com",
+      "phone": "09309691987",
+      "date": "2026-05-28",
+      "message": "وقت مشاوره",
+      "id": "Q9GbjXvIQm0"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
