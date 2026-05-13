@@ -55,6 +55,21 @@
         text-align: end !important;
     }
 
+    .prev-btn,
+    .next-btn {
+        position: absolute !important;
+        top: 55%;
+        transform: translateY(-50%);
+    }
+
+    .prev-btn {
+        left: 20%;
+    }
+
+    .next-btn {
+        right: 20%;
+    }
+
 }
 
 @media screen and (min-width: 992px) {
@@ -136,6 +151,11 @@
 
     .icon > * {
         font-size: 2.7rem !important;
+    }
+
+    .prev-btn,
+    .next-btn {
+        font-size: 3.3rem !important;
     }
     
 }

@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <section className="about my-5" id="about">
+    <section className="about" id="about">
       <div className="container">
         <div className="d-md-flex justify-content-between align-items-center">
           <div className="about-texts">

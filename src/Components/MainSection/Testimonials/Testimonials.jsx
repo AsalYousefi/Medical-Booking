@@ -1,15 +1,11 @@
-import { useRef } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Pagination, Navigation, Autoplay } from "swiper/modules";
+import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { BsArrowLeft, BsArrowRight, BsStar, BsStarFill } from "react-icons/bs";
 
 export default function Testimonials() {
-  const prevRef = useRef(null);
-  const nextRef = useRef(null);
-
   const comments = [
     {
       patient: { status: "Recovered Patient", name: "Rosey" },
@@ -66,41 +62,17 @@ export default function Testimonials() {
   ];
 
   return (
-    <section id="testimonials">
+    <section id="testimonials" className="testimonials position-relative">
       <div className="container position-relative">
         <h2 className="fw-bold text-black text-center my-5">Our Patients</h2>
 
-        <button
-          ref={prevRef}
-          type="button"
-          className="btn btn-light border position-absolute top-50 start-0 translate-middle-y shadow-sm d-none d-md-inline-flex align-items-center justify-content-center"
-          style={{ width: 44, height: 44, zIndex: 5 }}
-          aria-label="Previous"
-        >
-          <BsArrowLeft />
-        </button>
-
-        <button
-          ref={nextRef}
-          type="button"
-          className="border position-absolute top-50 end-0 translate-middle-y shadow-sm d-none d-md-inline-flex align-items-center justify-content-center"
-          style={{ width: 44, height: 44, zIndex: 5 }}
-          aria-label="Next"
-        >
-          <BsArrowRight />
-        </button>
-
         <Swiper
-          modules={[Autoplay, Pagination, Navigation]}
+          modules={[Autoplay, Navigation]}
           loop
           centeredSlides
-          onBeforeInit={(swiper) => {
-            swiper.params.navigation.prevEl = prevRef.current;
-            swiper.params.navigation.nextEl = nextRef.current;
-          }}
           navigation={{
-            prevEl: prevRef.current,
-            nextEl: nextRef.current,
+            prevEl: ".prev-btn",
+            nextEl: ".next-btn",
           }}
           spaceBetween={50}
           slidesPerView={1}
@@ -113,7 +85,7 @@ export default function Testimonials() {
           {comments.map((comment, i) => {
             return (
               <SwiperSlide key={i}>
-                <div className="testimonial-card p-4">
+                <div className="testimonial-card p-4 d-flex flex-column justify-content-between">
                   <div className="rate">
                     {Array.from({ length: 5 }, (_, i) =>
                       i < comment.rate ? (
@@ -126,10 +98,18 @@ export default function Testimonials() {
                   <h3 className="fw-bold text-primary my-2">{comment.title}</h3>
                   <p className="">{comment.message}</p>
                   <div className="patient-info">
-                    <img src={comment.profile} alt={comment.name} className="rounded-circle" />
-                    <div>
-                      <h4 className="fw-bold text-white">{comment.patient.name}</h4>
-                      <span className="text-muted">{comment.patient.status}</span>
+                    <img
+                      src={comment.profile}
+                      alt={comment.name}
+                      className="rounded-circle"
+                    />
+                    <div className="mt-2">
+                      <span className="fw-bold text-white me-3 mb-0 fs-5">
+                        {comment.patient.name}
+                      </span>
+                      <span className="fs-6" style={{ color: "#6c757d" }}>
+                        {comment.patient.status}
+                      </span>
                     </div>
                   </div>
                 </div>
@@ -137,6 +117,23 @@ export default function Testimonials() {
             );
           })}
         </Swiper>
+        <div className="w-50 mx-auto d-flex justify-content-around my-3">
+          <button
+            type="button"
+            className="prev-btn"
+            aria-label="Previous"
+          >
+            <BsArrowLeft />
+          </button>
+
+          <button
+            type="button"
+            className="next-btn"
+            aria-label="Next"
+          >
+            <BsArrowRight />
+          </button>
+        </div>
       </div>
     </section>
   );

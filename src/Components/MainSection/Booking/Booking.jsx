@@ -34,7 +34,7 @@ export default function Booking() {
   }, [patients])
 
   return (
-    <section id="booking" className="booking my-5">
+    <section id="booking" className="booking">
       <div className="container">
         <h2 className="fw-bold text-black text-center my-5">
           Book an appointment

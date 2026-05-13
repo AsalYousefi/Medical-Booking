@@ -1,6 +1,6 @@
 export default function Gallery() {
   return (
-    <section className="gallery py-4 my-5">
+    <section className="gallery py-4">
       <div className="container">
         <div className="row">
           <div className="col-6">
