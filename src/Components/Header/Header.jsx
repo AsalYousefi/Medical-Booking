@@ -1,12 +1,12 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import LngBtn from "./LngBtn";
 
 export default function Header(props) {
 
   const [isOpen, setIsOpen] = useState(false);
-
-  // function changeActiveIndex(i) {
-  //   setActiveIndex(i);
-  // }
+  
+  const { t } = useTranslation();
 
   return (
     <header className="position-sticky top-0 start-0 w-100 z-3 py-3 py-lg-4 shadow-lg bg-light">
@@ -24,7 +24,7 @@ export default function Header(props) {
                       } d-none d-lg-block text-capitalize nav-item fw-bold`}
                     >
                       <a href={`#${navOp}`} className="nav-link">
-                        {navOp}
+                        {t(`header.nav.${navOp}`)}
                       </a>
                     </li>
                   );
@@ -34,11 +34,11 @@ export default function Header(props) {
                   <a
                     href="/"
                   >
-                    medic care
+                    {t("header.logo.h1")}
                     <span
                       className="d-block"
                     >
-                      health specialist
+                      {t("header.logo.p")}
                     </span>
                   </a>
                 </h1>
@@ -53,7 +53,7 @@ export default function Header(props) {
                       } d-none d-lg-block text-capitalize nav-item fw-bold`}
                     >
                       <a href={`#${navOp}`} className="nav-link">
-                        {navOp}
+                        {t(`header.nav.${navOp}`)}
                       </a>
                     </li>
                   );
@@ -78,17 +78,16 @@ export default function Header(props) {
           <div className="container">
             <nav>
               <ul className="list-unstyled">
-                {navOptions.map((navOp, i) => {
+                {props.navOptions.map((navOp, i) => {
                   return (
                     <li
                       key={i}
                       className={`${
-                        activeIndex === i && "active"
+                        props.activeIndex === i && "active"
                       } text-capitalize nav-item fw-500 py-1 my-1`}
-                      onClick={() => changeActiveIndex(i)}
                     >
                       <a href={`#${navOp}`} className="nav-link">
-                        {navOp}
+                        {t(`header.nav.${navOp}`)}
                       </a>
                     </li>
                   );
@@ -98,6 +97,7 @@ export default function Header(props) {
           </div>
         </div>
       )}
+      <LngBtn />
     </header>
   );
 }

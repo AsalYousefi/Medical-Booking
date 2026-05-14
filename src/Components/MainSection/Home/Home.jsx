@@ -1,14 +1,10 @@
 import { useEffect, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { CiMobile2 } from "react-icons/ci";
 
 export default function Home() {
-  const images = [
-    "/slider/doctor-s-hand-holding-stethoscope-closeup.jpg",
-    "/slider/portrait-successful-mid-adult-doctor-with-crossed-arms.jpg",
-    "/slider/young-asian-female-dentist-white-coat-posing-clinic-equipment.jpg",
-  ];
 
-  const words = ["days", "lives", "health"];
+  const { t } = useTranslation();
 
   const [activeIndex, setActiveIndex] = useState(0);
 
@@ -19,6 +15,14 @@ export default function Home() {
 
     return () => clearInterval(imagesInterval);
   });
+
+  const images = [
+    "/slider/doctor-s-hand-holding-stethoscope-closeup.jpg",
+    "/slider/portrait-successful-mid-adult-doctor-with-crossed-arms.jpg",
+    "/slider/young-asian-female-dentist-white-coat-posing-clinic-equipment.jpg",
+  ];
+
+  const words = ["days", "lives", "health"];
 
   return (
     <section className="home" id="home">
@@ -40,8 +44,8 @@ export default function Home() {
 
         <div className="home-texts p-3 p-sm-4 bg-white">
           <div className="home-title position-relative py-2">
-            <h2 className="fw-bold">
-              Better
+            <h2 className="fw-bold" dir="ltr">
+              {t("home.h2")}
               {words.map((word, i) => {
                 return (
                   <span
@@ -50,23 +54,22 @@ export default function Home() {
                       activeIndex === i && "active-word"
                     } ms-3 position-absolute w-50 h-100 text-primary`}
                   >
-                    {word}
+                    {t(`home.word.${word}`)}
                   </span>
                 );
               })}
             </h2>
           </div>
           <p className="fw-light fs-5">
-            Medic Care is a Bootstrap 5 Template provided by TemplateMo website.
-            Credits go to FreePik and RawPixel for images used in this template.
+            {t("home.description")}
           </p>
           <div className="d-flex align-items-center fw-500 mt-4">
             <button className="text-uppercase text-primary border py-2" style={{width: "40%"}}>
-              <a href="#about">learn more</a>
+              <a href="#about">{t("home.btn")}</a>
             </button>
             <div className="ms-4 d-flex align-items-center phone-number">
               <CiMobile2 className="fs-4" />
-              <span className="fs-5 mx-1">010-020-0340</span>
+              <span className="fs-5 mx-1">{t("home.tel")}</span>
             </div>
           </div>
         </div>

@@ -1,0 +1,87 @@
+{
+  "header": {
+    "nav": {
+      "home": "home",
+      "about": "about",
+      "timeline": "timeline",
+      "testimonials": "testimonials",
+      "booking": "booking",
+      "contact": "contact"
+    },
+    "logo": {
+      "h1": "medic care",
+      "p": "health specialist"
+    }
+  },
+  "home": {
+    "h2": "Better",
+    "word": {
+      "days": "days",
+      "lives": "lives",
+      "health": "health"
+    },
+    "description": "Medic Care is a Bootstrap 5 Template provided by TemplateMo website. Credits go to FreePik and RawPixel for images used in this template.",
+    "btn": "learn more",
+    "tel": "010-020-0340"
+  },
+  "about": {
+    "h2": "Meet Dr. Carson",
+    "description1": "Protect yourself and others by wearing masks and washing hands frequently. Outdoor is safer than indoor for gatherings or holding events. People who get sick with Coronavirus disease (COVID-19) will experience mild to moderate symptoms and recover without special treatments.",
+    "description2": "You can feel free to use this CSS template for your medical profession or health care related websites. You can support us a little via PayPal if this template is good and useful for your work.",
+    "experience": {
+        "number": "12",
+        "text": "Years of Experience"
+    }
+  },
+  "timeline": {
+    "h2": "Our Timeline",
+    "0": {
+        "title": "Get the vaccine",
+        "description": "Donec facilisis urna dui, a dignissim mauris pretium a. Quisque quis libero fermentum, tempus felis eu, consequat nibh.",
+        "date": "2021-07-31 Saturday"
+    },
+    "1": {
+        "title": "Consulting your health",
+        "description": "You are fully permitted to use this template for your commercial or personal website. You are not permitted to redistribute the template ZIP file for a download purpose on any other Free CSS collection website.",
+        "date": "2021-07-15 Thursday"
+    },
+    "2": {
+        "title": "Certified Nurses",
+        "description": "Phasellus eleifend, urna interdum congue viverra, arcu neque ultrices ligula, id pulvinar nisi nibh et lacus. Vivamus gravida, ipsum non euismod tincidunt, sapien elit fermentum mi, quis iaculis enim ligula at arcu.",
+        "date": "2021-06-28 Monday"
+    },
+    "3": {
+        "title": "Covid-19 Hospitals",
+        "description": "Fusce vestibulum euismod nulla sed ultrices. Praesent rutrum nulla vel sapien euismod, quis tempus dui placerat. Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla",
+        "date": "2021-05-30 Sunday"
+    },
+    "4": {
+        "title": "Freelance Nursing",
+        "description": "If you need a working contact form that submits email to your inbox, please visit our contact page for more information.",
+        "date": "2021-05-18 Tuesday"
+    }
+  },
+  "testimonials": {
+    "h2": "Our Patients"
+  },
+  "booking": {
+    "h2": "Book an appointment",
+    "text": "Full name",
+    "email": "Email address",
+    "phone": "Phone 123-456-7890",
+    "message": "Additional Message",
+    "btn": "book now"
+  },
+  "footer": {
+    "openingHours": "opening hours",
+    "sunday": "Sunday : Closed",
+    "days": "Monday, Tuesday - Friday",
+    "daysHours": "8.00 AM - 3:30 PM",
+    "saturday": "Saturday",
+    "saturdayHours": "10:30 AM - 5:30 PM",
+    "ourClinic": "our clinic",
+    "address": "123 Digital Art Street, San Diego, CA 92123",
+    "socials": "socials",
+    "copyright": "Copyright © Medic Care 2021 Design: TemplateMo"
+  }
+}

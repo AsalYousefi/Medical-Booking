@@ -175,10 +175,12 @@ nav ul li {
     position: absolute;
     z-index: 2;
     top: 50%;
-    right: 99.8%;
+    inset-inline-end: 99.8%;
     transform: translateY(-50%);
     border-width: 10px;
-    border-color: transparent black transparent transparent;
+    border-block-color: transparent;
+    border-inline-start-color: transparent;
+    border-inline-end-color: black;
     border-style: solid;
 }
 
@@ -192,7 +194,7 @@ nav ul li {
     height: 90%;
     z-index: -1;
     top: 3%;
-    left: 8.8%;
+    inset-inline-start: 8.8%;
     background-color: var(--gray);
     opacity: .3;
 }

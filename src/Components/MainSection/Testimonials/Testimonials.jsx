@@ -4,8 +4,12 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 import { BsArrowLeft, BsArrowRight, BsStar, BsStarFill } from "react-icons/bs";
+import { useTranslation } from "react-i18next";
 
 export default function Testimonials() {
+
+  const { i18n, t } = useTranslation();
+
   const comments = [
     {
       patient: { status: "Recovered Patient", name: "Rosey" },
@@ -64,10 +68,11 @@ export default function Testimonials() {
   return (
     <section id="testimonials" className="testimonials position-relative">
       <div className="container position-relative">
-        <h2 className="fw-bold text-black text-center my-5">Our Patients</h2>
+        <h2 className="fw-bold text-black text-center my-5">{t("testimonials.h2")}</h2>
 
         <Swiper
           modules={[Autoplay, Navigation]}
+          dir={i18n.language === "fa" ? "rtl" : "ltr"}
           loop
           centeredSlides
           navigation={{

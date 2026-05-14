@@ -1,6 +1,10 @@
+import { useTranslation } from "react-i18next";
 import { BsFillPatchCheckFill, BsBook, BsFileMedical, BsGlobe, BsPerson } from "react-icons/bs";
 
 export default function Timeline() {
+
+  const { t } = useTranslation();
+  
   const timelines = [
     {
       title: "Get the vaccine",
@@ -47,7 +51,7 @@ export default function Timeline() {
     <section id="timeline" className="timeline">
       <div className="container">
         <h2 className="timeline-title fw-bold text-black text-center my-5">
-          Our Timeline
+          {t("timeline.h2")}
         </h2>
         <div className="position-relative">
             <div className="vertical-line"></div>
@@ -55,15 +59,15 @@ export default function Timeline() {
                 return (
                     <div key={i} className="timeline d-flex flex-column flex-md-row align-items-center my-5">
                         <div className="date my-2 my-md-4 align-self-end w-75 align-self-md-start">
-                            <span className="ms-1">{timeline.date}</span>
+                            <span className="ms-1">{t(`timeline.${i}.date`)}</span>
                         </div>
                         <div className="timeline-content d-flex justify-content-around w-100">
                             <div className="d-flex align-items-center justify-content-center mx-md-auto shadow-lg icon bg-white rounded-circle text-primary">
                                 {timeline.icon}
                             </div>
                             <div className="timeline-texts rounded-1 shadow-lg mt-3">
-                                <h3 className="bg-black text-white py-3 px-4 rounded-top-1 position-relative">{timeline.title}</h3>
-                                <p className="py-3 px-4 fw-light">{timeline.description}</p>
+                                <h3 className="bg-black text-white py-3 px-4 rounded-top-1 position-relative">{t(`timeline.${i}.title`)}</h3>
+                                <p className="py-3 px-4 fw-light">{t(`timeline.${i}.description`)}</p>
                             </div>
                         </div>
                     </div>

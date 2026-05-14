@@ -1,7 +1,10 @@
 import axios from "axios";
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
 
 export default function Booking() {
+
+  const { t } = useTranslation();
 
   const [formData, setFormData] = useState({
     fullName: "",
@@ -43,7 +46,7 @@ export default function Booking() {
     <section id="booking" className="booking">
       <div className="container">
         <h2 className="fw-bold text-black text-center my-5">
-          Book an appointment
+          {t("booking.h2")}
         </h2>
         <div className="">
           <form
@@ -54,7 +57,7 @@ export default function Booking() {
             <input
               name="fullname"
               type="text"
-              placeholder="Full name"
+              placeholder={t("booking.text")}
               required
               className="form-control p-3 my-2 border-0 rounded-0 border-bottom"
               autoComplete="on"
@@ -66,7 +69,7 @@ export default function Booking() {
             <input
               name="email"
               type="email"
-              placeholder="Email address"
+              placeholder={t("booking.email")}
               required
               className="form-control p-3 my-2 border-0 rounded-0 border-bottom"
               autoComplete="on"
@@ -78,7 +81,7 @@ export default function Booking() {
             <input
               name="phone"
               type="tel"
-              placeholder="Phone: 123-456-7890"
+              placeholder={t("booking.phone")}
               required
               className="form-control p-3 my-2 border-0 rounded-0 border-bottom"
               autoComplete="on"
@@ -101,7 +104,7 @@ export default function Booking() {
             <textarea
               name="message"
               rows={5}
-              placeholder="Additional Message"
+              placeholder={t("booking.message")}
               wrap="hard"
               className="form-control p-3 my-2 border-0 border-bottom"
               onChange={(e) =>
@@ -114,7 +117,7 @@ export default function Booking() {
                 type="submit"
                 className="submit-btn text-uppercase border-0 text-white py-3"
               >
-                book now
+                {t("booking.btn")}
               </button>
             </div>
           </form>

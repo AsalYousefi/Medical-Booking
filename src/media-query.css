@@ -42,13 +42,14 @@
     }
 
     .vertical-line {
-        left: 50% !important;
+        inset-inline-start: 50% !important;
     }
 
     div.timeline:nth-child(even) h3::after {
-        left: 99.8% !important;
-        right: auto !important;
-        border-color: transparent transparent transparent black !important;
+        inset-inline-start: 99.8% !important;
+        inset-inline-end: auto !important;
+        border-inline-start-color: black !important;
+        border-inline-end: transparent !important;
     }
 
     div.timeline:nth-child(odd) .date {
