@@ -22,7 +22,6 @@ export default function Header(props) {
                       className={`${
                         props.activeSection === navOp && "active"
                       } d-none d-lg-block text-capitalize nav-item fw-bold`}
-                      // onClick={() => changeActiveIndex(i)}
                     >
                       <a href={`#${navOp}`} className="nav-link">
                         {navOp}
@@ -52,7 +51,6 @@ export default function Header(props) {
                       className={`${
                         props.activeSection === navOp && "active"
                       } d-none d-lg-block text-capitalize nav-item fw-bold`}
-                      // onClick={() => changeActiveIndex(i)}
                     >
                       <a href={`#${navOp}`} className="nav-link">
                         {navOp}
