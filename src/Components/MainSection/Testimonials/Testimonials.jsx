@@ -73,6 +73,7 @@ export default function Testimonials() {
         <Swiper
           modules={[Autoplay, Navigation]}
           dir={i18n.language === "fa" ? "rtl" : "ltr"}
+          key={i18n.language === "fa" ? "rtl" : "ltr"}
           loop
           centeredSlides
           navigation={{
@@ -100,8 +101,8 @@ export default function Testimonials() {
                       )
                     )}
                   </div>
-                  <h3 className="fw-bold text-primary my-2">{comment.title}</h3>
-                  <p className="">{comment.message}</p>
+                  <h3 className="fw-bold text-primary my-2">{t(`testimonials.comments.${i}.title`)}</h3>
+                  <p className="">{t(`testimonials.comments.${i}.message`)}</p>
                   <div className="patient-info">
                     <img
                       src={comment.profile}
@@ -110,10 +111,10 @@ export default function Testimonials() {
                     />
                     <div className="mt-2">
                       <span className="fw-bold text-white me-3 mb-0 fs-5">
-                        {comment.patient.name}
+                      {t(`testimonials.comments.${i}.name`)}
                       </span>
                       <span className="fs-6" style={{ color: "#6c757d" }}>
-                        {comment.patient.status}
+                      {t(`testimonials.comments.${i}.status`)}
                       </span>
                     </div>
                   </div>
