@@ -29,4 +29,15 @@ i18n
     }
   })
 
+  function changeDirection(lng) {
+    document.documentElement.dir = lng === "fa" ? "rtl" : "ltr";
+    document.documentElement.lang = lng;
+  }
+
+  changeDirection(i18n.language);
+
+  i18n.on("languageChanged", (lng) => {
+    changeDirection(lng);
+  })
+
 export default i18n;

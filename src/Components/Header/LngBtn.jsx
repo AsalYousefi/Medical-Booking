@@ -7,8 +7,6 @@ export default function LngBtn() {
 
     function changeLng(lng) {
         i18n.changeLanguage(lng);
-        document.documentElement.dir = lng === "fa" ? "rtl" : "ltr";
-        document.documentElement.lang = lng
     }
 
     const nextLng = i18n.language === "fa" ? "en" : "fa"

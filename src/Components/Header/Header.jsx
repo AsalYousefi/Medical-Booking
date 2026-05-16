@@ -3,76 +3,67 @@ import { useTranslation } from "react-i18next";
 import LngBtn from "./LngBtn";
 
 export default function Header(props) {
-
   const [isOpen, setIsOpen] = useState(false);
-  
+
   const { t } = useTranslation();
 
   return (
-    <header className="position-sticky top-0 start-0 w-100 z-3 py-3 py-lg-4 shadow-lg bg-light">
-      <div className="container">
-        <div className="w-100 d-flex justify-content-center align-items-center">
-          <nav className="horizontal-nav mx-auto">
-            <ul className="m-0 list-unstyled d-lg-flex justify-content-lg-around align-items-lg-center">
-              {props.navOptions.map((navOp, i) => {
-                if (i < 3)
-                  return (
-                    <li
-                      key={i}
-                      className={`${
-                        props.activeSection === navOp && "active"
-                      } d-none d-lg-block text-capitalize nav-item fw-bold`}
-                    >
-                      <a href={`#${navOp}`} className="nav-link">
-                        {t(`header.nav.${navOp}`)}
-                      </a>
-                    </li>
-                  );
-              })}
-              <li className="text-center">
-                <h1 className="logo text-primary text-capitalize fw-bold">
-                  <a
-                    href="/"
-                  >
-                    {t("header.logo.h1")}
-                    <span
-                      className="d-block"
-                    >
-                      {t("header.logo.p")}
-                    </span>
-                  </a>
-                </h1>
-              </li>
-              {props.navOptions.map((navOp, i) => {
-                if (i >= 3)
-                  return (
-                    <li
-                      key={i}
-                      className={`${
-                        props.activeSection === navOp && "active"
-                      } d-none d-lg-block text-capitalize nav-item fw-bold`}
-                    >
-                      <a href={`#${navOp}`} className="nav-link">
-                        {t(`header.nav.${navOp}`)}
-                      </a>
-                    </li>
-                  );
-              })}
-            </ul>
-          </nav>
-          <div
-            className={`d-lg-none pointer menu-btn d-flex flex-column justify-content-between ${
-              isOpen && "open"
-            }`}
-            onClick={() => setIsOpen((prev) => !prev)}
-            style={{ transform: open ? "rotate(180deg)" : "rotate(0deg)" }}
-          >
-            <div className="bar"></div>
-            <div className="bar"></div>
-            <div className="bar"></div>
-          </div>
-        </div>
+    <header className="d-flex justify-content-around align-items-center position-sticky top-0 start-0 w-100 z-3 py-3 py-lg-4 shadow-lg bg-light">
+      {/* for center nav */}
+      <div className="empty-box d-none d-lg-block"></div>
+      <div
+        className={`d-lg-none pointer menu-btn d-flex flex-column justify-content-between ${
+          isOpen && "open"
+        }`}
+        onClick={() => setIsOpen((prev) => !prev)}
+        style={{ transform: open ? "rotate(180deg)" : "rotate(0deg)" }}
+      >
+        <div className="bar"></div>
+        <div className="bar"></div>
+        <div className="bar"></div>
       </div>
+      <nav className="horizontal-nav">
+        <ul className="m-0 list-unstyled d-lg-flex justify-content-lg-around align-items-lg-center">
+          {props.navOptions.map((navOp, i) => {
+            if (i < 3)
+              return (
+                <li
+                  key={i}
+                  className={`${
+                    props.activeSection === navOp && "active"
+                  } d-none d-lg-block text-capitalize nav-item fw-bold`}
+                >
+                  <a href={`#${navOp}`} className="nav-link">
+                    {t(`header.nav.${navOp}`)}
+                  </a>
+                </li>
+              );
+          })}
+          <li className="text-center">
+            <h1 className="logo text-primary text-capitalize fw-bold">
+              <a href="/">
+                {t("header.logo.h1")}
+                <span className="d-block">{t("header.logo.p")}</span>
+              </a>
+            </h1>
+          </li>
+          {props.navOptions.map((navOp, i) => {
+            if (i >= 3)
+              return (
+                <li
+                  key={i}
+                  className={`${
+                    props.activeSection === navOp && "active"
+                  } d-none d-lg-block text-capitalize nav-item fw-bold`}
+                >
+                  <a href={`#${navOp}`} className="nav-link">
+                    {t(`header.nav.${navOp}`)}
+                  </a>
+                </li>
+              );
+          })}
+        </ul>
+      </nav>
       {isOpen && (
         <div className="d-lg-none position-absolute z-3 w-100 bg-light start-0 top-100">
           <div className="container">

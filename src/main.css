@@ -94,6 +94,10 @@ nav ul li {
     color: #000;
 }
 
+.empty-box {
+    width: 4.5vw;
+}
+
 /* home */
 
 .hero-section {

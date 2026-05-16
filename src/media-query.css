@@ -79,7 +79,8 @@
     }
 
     .horizontal-nav {
-        width: 90% !important;
+        width: 75% !important;
+        max-width: 1250px;
     }
 
     .home-texts {
