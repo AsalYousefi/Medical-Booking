@@ -50,6 +50,39 @@ button {
     font-weight: 500 !important;
 }
 
+/* header */
+
+header {
+    grid-template-columns: 4vw auto 4vw;
+    align-items: center;
+}
+
+.menu-btn {
+    justify-self: start;
+    grid-column: 1;
+    height: 19px;
+}
+
+.menu-btn > * {
+    width: 30px;
+}
+
+.horizontal-nav {
+    justify-self: center;
+    grid-column: 2;
+}
+
+.lng-btn {
+    grid-column: 3;
+    justify-self: end;
+    font-size: .8rem;
+}
+
+.lng-btn svg {
+    width: 1.5rem;
+    height: 1rem;
+}
+
 .logo {
     font-size: 24px;
 }
@@ -59,13 +92,6 @@ button {
     color: var(--gray);
 }
 
-.menu-btn {
-    height: 19px;
-}
-
-.menu-btn>* {
-    width: 30px;
-}
 
 .bar {
     height: 2px;
@@ -92,10 +118,6 @@ nav ul li {
 
 .active {
     color: #000;
-}
-
-.empty-box {
-    width: 4.5vw;
 }
 
 /* home */

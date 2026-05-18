@@ -8,9 +8,7 @@ export default function Header(props) {
   const { t } = useTranslation();
 
   return (
-    <header className="d-flex justify-content-around align-items-center position-sticky top-0 start-0 w-100 z-3 py-3 py-lg-4 shadow-lg bg-light">
-      {/* for center nav */}
-      <div className="empty-box d-none d-lg-block"></div>
+    <header className="d-grid position-sticky top-0 start-0 w-100 z-3 p-3 py-lg-4 shadow-lg bg-light">
       <div
         className={`d-lg-none pointer menu-btn d-flex flex-column justify-content-between ${
           isOpen && "open"
@@ -64,6 +62,7 @@ export default function Header(props) {
           })}
         </ul>
       </nav>
+      <LngBtn />
       {isOpen && (
         <div className="d-lg-none position-absolute z-3 w-100 bg-light start-0 top-100">
           <div className="container">
@@ -88,7 +87,6 @@ export default function Header(props) {
           </div>
         </div>
       )}
-      <LngBtn />
     </header>
   );
 }
