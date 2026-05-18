@@ -73,7 +73,7 @@ export default function Header(props) {
                     <li
                       key={i}
                       className={`${
-                        props.activeIndex === i && "active"
+                        props.activeSection === navOp && "active"
                       } text-capitalize nav-item fw-500 py-1 my-1`}
                     >
                       <a href={`#${navOp}`} className="nav-link">
