@@ -65,11 +65,11 @@
     }
 
     .prev-btn {
-        left: 20%;
+        inset-inline-start: 20%;
     }
 
     .next-btn {
-        right: 20%;
+        inset-inline-end: 20%;
     }
 
 }
