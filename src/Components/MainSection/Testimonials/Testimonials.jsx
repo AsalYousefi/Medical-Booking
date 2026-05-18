@@ -129,7 +129,7 @@ export default function Testimonials() {
             className="prev-btn"
             aria-label="Previous"
           >
-            <BsArrowLeft />
+            {i18n.language === "en" ? <BsArrowLeft /> : <BsArrowRight />}
           </button>
 
           <button
@@ -137,7 +137,7 @@ export default function Testimonials() {
             className="next-btn"
             aria-label="Next"
           >
-            <BsArrowRight />
+            {i18n.language === "en" ? <BsArrowRight /> : <BsArrowLeft />}
           </button>
         </div>
       </div>
