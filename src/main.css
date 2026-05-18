@@ -186,7 +186,7 @@ nav ul li {
 /* timeline */
 
 .icon {
-    width: 30%;
+    width: 20%;
     aspect-ratio: 1/1;
     align-self: flex-start;
     max-width: 70px;
@@ -220,7 +220,7 @@ nav ul li {
     height: 90%;
     z-index: -1;
     top: 3%;
-    inset-inline-start: 8.8%;
+    inset-inline-start: 10%;
     background-color: var(--gray);
     opacity: .3;
 }
