@@ -44,7 +44,7 @@ export default function Home() {
 
         <div className="home-texts p-3 p-sm-4 bg-white">
           <div className="home-title position-relative py-2">
-            <h2 className="fw-bold" dir="ltr">
+            <h2 className="fw-bold">
               {t("home.h2")}
               {words.map((word, i) => {
                 return (
