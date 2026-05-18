@@ -116,7 +116,7 @@ nav ul li {
     color: var(--gray);
 }
 
-.active {
+li.active {
     color: #000;
 }
 
@@ -278,6 +278,10 @@ nav ul li {
 .booking input,
 .booking textarea {
     color: #6c757d;
+}
+
+.booking input {
+    direction: inherit !important;
 }
 
 /* footer */
