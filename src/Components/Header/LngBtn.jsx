@@ -12,15 +12,15 @@ export default function LngBtn() {
     const nextLng = i18n.language === "fa" ? "en" : "fa"
 
     return (
-        <button className="d-flex align-items-center border-0 text-uppercase" onClick={() => changeLng(nextLng)}>
+        <button className="lng-btn d-flex align-items-center border-0 text-uppercase" onClick={() => changeLng(nextLng)}>
             {i18n.language === "en" ? (
                 <>
-                  <IR className="me-2" height={20} width={30} />
+                  <IR className="me-2" />
                   fa
                 </>
             ): (
                 <>
-                  <US className="me-2" height={20} width={30}  />
+                  <US className="me-2"  />
                   en
                 </>
             )}
