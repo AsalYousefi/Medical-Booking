@@ -1,5 +1,5 @@
 import { createRoot } from "react-dom/client";
-import App from "./app";
+import App from "./App";
 import { StrictMode } from "react";
 import "./i18n"
 import "bootstrap/dist/css/bootstrap.css";
