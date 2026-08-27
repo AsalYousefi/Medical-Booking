@@ -1,12 +1,19 @@
 import axios from "axios";
-import { useState } from "react";
+import { useState, type ChangeEvent, type FormEvent } from "react";
 import { useTranslation } from "react-i18next";
 
-export default function Booking() {
+type BookingFormData = {
+  fullName: string;
+  email: string;
+  phone: string;
+  date: string;
+  message: string;
+};
 
+export default function Booking() {
   const { t } = useTranslation();
 
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<BookingFormData>({
     fullName: "",
     email: "",
     phone: "",
@@ -26,18 +33,17 @@ export default function Booking() {
 
   async function saveData() {
     try {
-      await axios.post(
-        "http://localhost:3000/patients",
-        formData
-      )
+      await axios.post("http://localhost:3000/patients", formData);
 
       resetData();
     } catch (err) {
-      console.log(err.message);
+      if (err instanceof Error) {
+        console.log(err.message);
+      }
     }
   }
 
-  function submitHandler(e) {
+  function submitHandler(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     saveData();
   }
@@ -61,7 +67,7 @@ export default function Booking() {
               required
               className="form-control p-3 my-2 border-0 rounded-0 border-bottom"
               autoComplete="on"
-              onChange={(e) =>
+              onChange={(e: ChangeEvent<HTMLInputElement>) =>
                 setFormData({ ...formData, fullName: e.target.value })
               }
               value={formData.fullName}
@@ -73,7 +79,7 @@ export default function Booking() {
               required
               className="form-control p-3 my-2 border-0 rounded-0 border-bottom"
               autoComplete="on"
-              onChange={(e) =>
+              onChange={(e: ChangeEvent<HTMLInputElement>) =>
                 setFormData({ ...formData, email: e.target.value })
               }
               value={formData.email}
@@ -85,7 +91,7 @@ export default function Booking() {
               required
               className="form-control p-3 my-2 border-0 rounded-0 border-bottom"
               autoComplete="on"
-              onChange={(e) =>
+              onChange={(e: ChangeEvent<HTMLInputElement>) =>
                 setFormData({ ...formData, phone: e.target.value })
               }
               value={formData.phone}
@@ -96,7 +102,7 @@ export default function Booking() {
               required
               className="form-control p-3 my-2 border-0 rounded-0 border-bottom"
               autoComplete="on"
-              onChange={(e) =>
+              onChange={(e: ChangeEvent<HTMLInputElement>) =>
                 setFormData({ ...formData, date: e.target.value })
               }
               value={formData.date}
@@ -107,7 +113,7 @@ export default function Booking() {
               placeholder={t("booking.message")}
               wrap="hard"
               className="form-control p-3 my-2 border-0 border-bottom"
-              onChange={(e) =>
+              onChange={(e: ChangeEvent<HTMLTextAreaElement>) =>
                 setFormData({ ...formData, message: e.target.value })
               }
               value={formData.message}

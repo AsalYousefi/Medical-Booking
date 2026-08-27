@@ -3,7 +3,6 @@ import { useTranslation } from "react-i18next";
 import { CiMobile2 } from "react-icons/ci";
 
 export default function Home() {
-
   const { t } = useTranslation();
 
   const [activeIndex, setActiveIndex] = useState(0);
@@ -60,11 +59,12 @@ export default function Home() {
               })}
             </h2>
           </div>
-          <p className="fw-light fs-5">
-            {t("home.description")}
-          </p>
+          <p className="fw-light fs-5">{t("home.description")}</p>
           <div className="d-flex align-items-center fw-500 mt-4">
-            <button className="text-uppercase text-primary border py-2" style={{width: "40%"}}>
+            <button
+              className="text-uppercase text-primary border py-2"
+              style={{ width: "40%" }}
+            >
               <a href="#about">{t("home.btn")}</a>
             </button>
             <div className="ms-4 d-flex align-items-center phone-number">

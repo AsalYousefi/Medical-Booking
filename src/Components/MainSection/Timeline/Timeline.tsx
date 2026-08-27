@@ -1,11 +1,24 @@
+import type { ReactNode } from "react";
 import { useTranslation } from "react-i18next";
-import { BsFillPatchCheckFill, BsBook, BsFileMedical, BsGlobe, BsPerson } from "react-icons/bs";
+import {
+  BsFillPatchCheckFill,
+  BsBook,
+  BsFileMedical,
+  BsGlobe,
+  BsPerson,
+} from "react-icons/bs";
+
+type TimelineItem = {
+  title: string;
+  date: string;
+  icon: ReactNode;
+  description: string;
+};
 
 export default function Timeline() {
-
   const { t } = useTranslation();
-  
-  const timelines = [
+
+  const timelines: TimelineItem[] = [
     {
       title: "Get the vaccine",
       date: "2021-07-31 Saturday",
@@ -54,25 +67,32 @@ export default function Timeline() {
           {t("timeline.h2")}
         </h2>
         <div className="position-relative">
-            <div className="vertical-line"></div>
-            {timelines.map((timeline, i) => {
-                return (
-                    <div key={i} className="timeline d-flex flex-column flex-md-row align-items-center my-5">
-                        <div className="date my-2 my-md-4 align-self-end w-75 align-self-md-start">
-                            <span className="ms-1">{t(`timeline.${i}.date`)}</span>
-                        </div>
-                        <div className="timeline-content d-flex justify-content-around w-100">
-                            <div className="d-flex align-items-center justify-content-center mx-md-auto shadow-lg icon bg-white rounded-circle text-primary">
-                                {timeline.icon}
-                            </div>
-                            <div className="timeline-texts rounded-1 shadow-lg mt-3">
-                                <h3 className="bg-black text-white py-3 px-4 rounded-top-1 position-relative">{t(`timeline.${i}.title`)}</h3>
-                                <p className="py-3 px-4 fw-light">{t(`timeline.${i}.description`)}</p>
-                            </div>
-                        </div>
-                    </div>
-                )
-            })}
+          <div className="vertical-line"></div>
+          {timelines.map((timeline, i) => {
+            return (
+              <div
+                key={i}
+                className="timeline d-flex flex-column flex-md-row align-items-center my-5"
+              >
+                <div className="date my-2 my-md-4 align-self-end w-75 align-self-md-start">
+                  <span className="ms-1">{t(`timeline.${i}.date`)}</span>
+                </div>
+                <div className="timeline-content d-flex justify-content-around w-100">
+                  <div className="d-flex align-items-center justify-content-center mx-md-auto shadow-lg icon bg-white rounded-circle text-primary">
+                    {timeline.icon}
+                  </div>
+                  <div className="timeline-texts rounded-1 shadow-lg mt-3">
+                    <h3 className="bg-black text-white py-3 px-4 rounded-top-1 position-relative">
+                      {t(`timeline.${i}.title`)}
+                    </h3>
+                    <p className="py-3 px-4 fw-light">
+                      {t(`timeline.${i}.description`)}
+                    </p>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
         </div>
       </div>
     </section>

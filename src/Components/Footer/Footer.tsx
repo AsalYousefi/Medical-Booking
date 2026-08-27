@@ -2,7 +2,6 @@ import { useTranslation } from "react-i18next";
 import { BsFacebook, BsInstagram, BsTwitter, BsYoutube } from "react-icons/bs";
 
 export default function Footer() {
-
   const { t } = useTranslation();
 
   return (
@@ -10,7 +9,9 @@ export default function Footer() {
       <div className="container">
         <div className="row">
           <div className="col-12 col-lg-5 me-auto my-md-5 my-lg-0">
-            <h3 className="text-capitalize text-black">{t("footer.openingHours")}</h3>
+            <h3 className="text-capitalize text-black">
+              {t("footer.openingHours")}
+            </h3>
             <div className="my-4">
               <div className="d-flex justify-content-between align-items-center py-1">
                 <span>{t("footer.sunday")}</span>
@@ -31,9 +32,7 @@ export default function Footer() {
             <h3 className="text-capitalize text-black">{t("footer.ourClinic")}</h3>
             <div className="my-4">
               <a href="mailto:hello@company.co">hello@company.co</a>
-              <p className="my-3">
-                {t("footer.address")}
-              </p>
+              <p className="my-3">{t("footer.address")}</p>
             </div>
           </div>
           <div className="col-12 col-md-6 col-lg-3 ms-auto">
@@ -55,9 +54,7 @@ export default function Footer() {
           </div>
         </div>
         <div className="copyright">
-          <p className="copyright-text">
-            {t("footer.copyright")}
-          </p>
+          <p className="copyright-text">{t("footer.copyright")}</p>
         </div>
       </div>
     </footer>

@@ -4,31 +4,31 @@ import Footer from "./Components/Footer/Footer";
 import { useEffect, useState } from "react";
 
 function App() {
-
-  const [activeSection, setActiveSection] = useState("home")
+  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
-    const sections = document.querySelectorAll("section, footer")
+    const sections = document.querySelectorAll("section, footer");
 
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          entry.isIntersecting && setActiveSection(entry.target.id)
-        })
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
       },
       {
-        threshold: .15,
+        threshold: 0.15,
       }
-    )
+    );
 
     sections.forEach((section) => {
-      observer.observe(section)
-    })
+      observer.observe(section);
+    });
 
     return () => observer.disconnect();
+  }, []);
 
-  }, [])
-  
   const navOptions = [
     "home",
     "about",

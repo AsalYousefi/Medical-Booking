@@ -1,0 +1,14 @@
+{
+  "nav": {
+    "home": "home",
+    "about": "about",
+    "timeline": "timeline",
+    "testimonials": "testimonials",
+    "booking": "booking",
+    "contact": "contact"
+  },
+  "logo": {
+    "h1": "medic care",
+    "p": "health specialist"
+  }
+}
