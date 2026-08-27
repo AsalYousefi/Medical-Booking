@@ -2,7 +2,12 @@ import { useState } from "react";
 import { useTranslation } from "react-i18next";
 import LngBtn from "./LngBtn";
 
-export default function Header(props) {
+type HeaderProps = {
+  navOptions: string[];
+  activeSection: string;
+};
+
+export default function Header(props: HeaderProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   const { t } = useTranslation();
@@ -14,7 +19,7 @@ export default function Header(props) {
           isOpen && "open"
         }`}
         onClick={() => setIsOpen((prev) => !prev)}
-        style={{ transform: open ? "rotate(180deg)" : "rotate(0deg)" }}
+        style={{ transform: isOpen ? "rotate(180deg)" : "rotate(0deg)" }}
       >
         <div className="bar"></div>
         <div className="bar"></div>

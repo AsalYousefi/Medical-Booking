@@ -4,7 +4,7 @@ import LanguageDetector from "i18next-browser-languagedetector";
 
 import enHeader from "./locales/en/header.json"
 import enAbout from "./locales/en/about.json"
-import enTestimonals from "./locales/en/testimonials.json"
+import enTestimonials from "./locales/en/testimonials.json"
 import enTimeline from "./locales/en/timeline.json"
 import enHome from "./locales/en/home.json"
 import enFooter from "./locales/en/footer.json"
@@ -12,7 +12,7 @@ import enBooking from "./locales/en/booking.json"
 
 import faHeader from "./locales/fa/header.json"
 import faAbout from "./locales/fa/about.json"
-import faTestimonals from "./locales/fa/testimonials.json"
+import faTestimonials from "./locales/fa/testimonials.json"
 import faTimeline from "./locales/fa/timeline.json"
 import faHome from "./locales/fa/home.json"
 import faFooter from "./locales/fa/footer.json"
@@ -28,7 +28,7 @@ i18n
               header: enHeader,
               home: enHome,
               about: enAbout,
-              testimonals: enTestimonals,
+              testimonials: enTestimonials,
               timeline: enTimeline,
               booking: enBooking,
               footer: enFooter
@@ -39,7 +39,7 @@ i18n
             header: faHeader,
             home: faHome,
             about: faAbout,
-            testimonals: faTestimonals,
+            testimonials: faTestimonials,
             timeline: faTimeline,
             booking: faBooking,
             footer: faFooter

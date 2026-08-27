@@ -6,11 +6,18 @@ import "swiper/css/navigation";
 import { BsArrowLeft, BsArrowRight, BsStar, BsStarFill } from "react-icons/bs";
 import { useTranslation } from "react-i18next";
 
-export default function Testimonials() {
+type TestimonialComment = {
+  patient: { status: string; name: string };
+  title: string;
+  message: string;
+  rate: number;
+  profile: string;
+};
 
+export default function Testimonials() {
   const { i18n, t } = useTranslation();
 
-  const comments = [
+  const comments: TestimonialComment[] = [
     {
       patient: { status: "Recovered Patient", name: "Rosey" },
       title: "Best Advices",
@@ -68,7 +75,9 @@ export default function Testimonials() {
   return (
     <section id="testimonials" className="testimonials position-relative">
       <div className="container position-relative">
-        <h2 className="fw-bold text-black text-center my-5">{t("testimonials.h2")}</h2>
+        <h2 className="fw-bold text-black text-center my-5">
+          {t("testimonials.h2")}
+        </h2>
 
         <Swiper
           modules={[Autoplay, Navigation]}
@@ -93,28 +102,30 @@ export default function Testimonials() {
               <SwiperSlide key={i}>
                 <div className="testimonial-card p-4 d-flex flex-column justify-content-between">
                   <div className="rate">
-                    {Array.from({ length: 5 }, (_, i) =>
-                      i < comment.rate ? (
-                        <BsStarFill key={i} />
+                    {Array.from({ length: 5 }, (_, starIndex) =>
+                      starIndex < comment.rate ? (
+                        <BsStarFill key={starIndex} />
                       ) : (
-                        <BsStar key={i} />
+                        <BsStar key={starIndex} />
                       )
                     )}
                   </div>
-                  <h3 className="fw-bold text-primary my-2">{t(`testimonials.comments.${i}.title`)}</h3>
+                  <h3 className="fw-bold text-primary my-2">
+                    {t(`testimonials.comments.${i}.title`)}
+                  </h3>
                   <p className="">{t(`testimonials.comments.${i}.message`)}</p>
                   <div className="patient-info">
                     <img
                       src={comment.profile}
-                      alt={comment.name}
+                      alt={comment.patient.name}
                       className="rounded-circle"
                     />
                     <div className="mt-2">
                       <span className="fw-bold text-white me-3 mb-0 fs-5">
-                      {t(`testimonials.comments.${i}.name`)}
+                        {t(`testimonials.comments.${i}.name`)}
                       </span>
                       <span className="fs-6" style={{ color: "#6c757d" }}>
-                      {t(`testimonials.comments.${i}.status`)}
+                        {t(`testimonials.comments.${i}.status`)}
                       </span>
                     </div>
                   </div>
@@ -124,19 +135,11 @@ export default function Testimonials() {
           })}
         </Swiper>
         <div className="w-50 mx-auto d-flex justify-content-around my-3">
-          <button
-            type="button"
-            className="prev-btn"
-            aria-label="Previous"
-          >
+          <button type="button" className="prev-btn" aria-label="Previous">
             {i18n.language === "en" ? <BsArrowLeft /> : <BsArrowRight />}
           </button>
 
-          <button
-            type="button"
-            className="next-btn"
-            aria-label="Next"
-          >
+          <button type="button" className="next-btn" aria-label="Next">
             {i18n.language === "en" ? <BsArrowRight /> : <BsArrowLeft />}
           </button>
         </div>
