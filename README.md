@@ -47,7 +47,7 @@ Make sure you have Node.js and npm installed.
 Clone the repository and install the dependencies:
 
 ```bash
-git clone <repository-url>
+git clone https://github.com/AsalYousefi/Medical-Booking.git
 cd Medical-Booking
 npm install
 ```
