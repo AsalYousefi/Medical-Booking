@@ -1,8 +1,22 @@
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import LanguageDetector from "i18next-browser-languagedetector";
-import en from "./locales/en/translation.json";
-import fa from "./locales/fa/translation.json";
+
+import enHeader from "./locales/en/header.json"
+import enAbout from "./locales/en/about.json"
+import enTestimonals from "./locales/en/testimonials.json"
+import enTimeline from "./locales/en/timeline.json"
+import enHome from "./locales/en/home.json"
+import enFooter from "./locales/en/footer.json"
+import enBooking from "./locales/en/booking.json"
+
+import faHeader from "./locales/fa/header.json"
+import faAbout from "./locales/fa/about.json"
+import faTestimonals from "./locales/fa/testimonials.json"
+import faTimeline from "./locales/fa/timeline.json"
+import faHome from "./locales/fa/home.json"
+import faFooter from "./locales/fa/footer.json"
+import faBooking from "./locales/fa/booking.json"
 
 i18n
   .use(LanguageDetector)
@@ -10,10 +24,26 @@ i18n
   .init({
     resources: {
         en: {
-            translation: en
+            translation: {
+              header: enHeader,
+              home: enHome,
+              about: enAbout,
+              testimonals: enTestimonals,
+              timeline: enTimeline,
+              booking: enBooking,
+              footer: enFooter
+            }
         },
         fa: {
-            translation: fa
+          translation: {
+            header: faHeader,
+            home: faHome,
+            about: faAbout,
+            testimonals: faTestimonals,
+            timeline: faTimeline,
+            booking: faBooking,
+            footer: faFooter
+          }
         }
     },
 

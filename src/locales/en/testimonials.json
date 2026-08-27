@@ -1,0 +1,41 @@
+{
+  "h2": "Our Patients",
+  "comments": {
+    "0": {
+      "status": "Recovered Patient",
+      "name": "Rosey",
+      "title": "Best Advices",
+      "message": "Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla."
+    },
+    "1": {
+      "status": "Recovered",
+      "name": "Ben Walker",
+      "title": "Doctor cares everyone!",
+      "message": "Donec in elementum orci, nec posuere ligula. Quisque vulputate diam et ullamcorper ullamcorper. Pellentesque vestibulum neque at leo fermentum mattis."
+    },
+    "2": {
+      "status": "New Patient",
+      "name": "Laura Zono",
+      "title": "Great services!",
+      "message": "Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec sit amet velit vitae purus aliquam efficitur."
+    },
+    "3": {
+      "status": "Patient",
+      "name": "Marie",
+      "title": "Best Health Care",
+      "message": "Phasellus ligula ante, tempus ac imperdiet ut, mattis ac nibh. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus."
+    },
+    "4": {
+      "status": "Recovered Patient",
+      "name": "Rosey",
+      "title": "Best Advices",
+      "message": "Integer posuere erat a ante venenatis dapibus posuere velit aliquet. Maecenas faucibus mollis interdum. Donec ullamcorper nulla non metus auctor fringilla."
+    },
+    "5": {
+      "status": "Recovered",
+      "name": "Ben Walker",
+      "title": "Doctor cares everyone!",
+      "message": "Donec in elementum orci, nec posuere ligula. Quisque vulputate diam et ullamcorper ullamcorper. Pellentesque vestibulum neque at leo fermentum mattis."
+    }
+  }
+}
