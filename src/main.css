@@ -26,7 +26,8 @@ main p {
     font-size: 20px;
 }
 
-section, footer {
+section,
+footer {
     scroll-margin-top: 140px;
 }
 
@@ -63,7 +64,7 @@ header {
     height: 19px;
 }
 
-.menu-btn > * {
+.menu-btn>* {
     width: 30px;
 }
 
@@ -306,7 +307,7 @@ footer a:hover {
     max-width: 150px;
 }
 
-.socials > * {
+.socials>* {
     font-size: 1.5rem;
 }
 
@@ -320,4 +321,88 @@ footer a:hover {
 
 .copyright-text {
     font-size: 12px !important;
+}
+
+
+/* resume btn */
+
+.resume-btn {
+    width: 4em;
+    height: 4em;
+    z-index: 1000;
+    transition: transform 0.2s ease;
+    inset-inline-end: 0;
+    isolation: isolate;
+}
+
+.resume-btn::before {
+    content: "";
+    position: absolute;
+    inset: -6px;
+    border-radius: 50%;
+    background: rgba(13, 110, 253, 0.25);
+    z-index: -1;
+
+    animation: resumeGlow 2s ease-in-out infinite;
+}
+
+@keyframes resumeGlow {
+
+    0%,
+    100% {
+        transform: scale(0.85);
+        opacity: 0.35;
+        box-shadow: 0 0 8px rgba(13, 110, 253, 0.3);
+    }
+
+    50% {
+        transform: scale(1.1);
+        opacity: 0.8;
+        box-shadow: 0 0 25px 8px rgba(13, 110, 253, 0.55);
+    }
+}
+
+.resume-btn:hover::before {
+    animation-play-state: paused;
+    opacity: 0.9;
+    transform: scale(1.15);
+}
+
+.resume-btn:hover {
+    transform: translateY(-2px);
+}
+
+.resume-tooltip {
+    position: absolute;
+    bottom: calc(100% + 10px);
+    left: 50%;
+    transform: translateX(-50%);
+
+    padding: 6px 10px;
+    border-radius: 10px;
+    background: #000;
+    color: #fff;
+
+    font-size: 13px;
+    white-space: nowrap;
+
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease;
+}
+
+.resume-tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    border: 5px solid transparent;
+    border-top-color: #000;
+}
+
+.resume-btn:hover .resume-tooltip {
+    opacity: 1;
+    visibility: visible;
 }

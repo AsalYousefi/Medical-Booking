@@ -9,6 +9,7 @@ import enTimeline from "./locales/en/timeline.json";
 import enHome from "./locales/en/home.json";
 import enFooter from "./locales/en/footer.json";
 import enBooking from "./locales/en/booking.json";
+import enResumeBtn from "./locales/en/resumeBtn.json"
 
 import faHeader from "./locales/fa/header.json";
 import faAbout from "./locales/fa/about.json";
@@ -17,6 +18,7 @@ import faTimeline from "./locales/fa/timeline.json";
 import faHome from "./locales/fa/home.json";
 import faFooter from "./locales/fa/footer.json";
 import faBooking from "./locales/fa/booking.json";
+import faResumeBtn from "./locales/fa/resumeBtn.json"
 
 i18n
   .use(LanguageDetector)
@@ -32,6 +34,7 @@ i18n
           timeline: enTimeline,
           booking: enBooking,
           footer: enFooter,
+          resumeBtn: enResumeBtn
         },
       },
       fa: {
@@ -43,11 +46,12 @@ i18n
           timeline: faTimeline,
           booking: faBooking,
           footer: faFooter,
+          resumeBtn: faResumeBtn
         },
       },
     },
 
-    fallbackLng: "en",
+    fallbackLng: "fa",
 
     interpolation: {
       escapeValue: false,

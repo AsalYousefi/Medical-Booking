@@ -2,6 +2,7 @@ import Header from "./Components/Header/Header";
 import MainSection from "./Components/MainSection/MainSection";
 import Footer from "./Components/Footer/Footer";
 import { useEffect, useState } from "react";
+import ResumeBtn from "./Components/ResumeBtn/ResumeBtn";
 
 function App() {
   const [activeSection, setActiveSection] = useState("home");
@@ -39,11 +40,12 @@ function App() {
   ];
 
   return (
-    <>
+    <div className="position-relative">
+      <ResumeBtn />
       <Header navOptions={navOptions} activeSection={activeSection} />
       <MainSection activeSection={activeSection} />
       <Footer />
-    </>
+    </div>
   );
 }
 export default App;
