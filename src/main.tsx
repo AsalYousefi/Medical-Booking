@@ -5,6 +5,7 @@ import "./i18n";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/css/bootstrap.rtl.min.css";
 import "./main.css";
+import AuthContextProvider from "./context/AuthContext";
 
 const rootElement = document.getElementById("root");
 
@@ -14,6 +15,8 @@ if (!rootElement) {
 
 createRoot(rootElement).render(
   <StrictMode>
-    <App />
+    <AuthContextProvider>
+      <App />
+    </AuthContextProvider>
   </StrictMode>
 );
