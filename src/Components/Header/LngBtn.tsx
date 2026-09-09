@@ -18,12 +18,12 @@ export default function LngBtn() {
       {i18n.language === "en" ? (
         <>
           <IR className="me-2" />
-          fa
+          <span className="d-none d-lg-block">fa</span>
         </>
       ) : (
         <>
           <US className="me-2" />
-          en
+          <span className="d-none d-lg-block">en</span>
         </>
       )}
     </button>
