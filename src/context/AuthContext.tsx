@@ -1,4 +1,4 @@
-import { createContext, PropsWithChildren, ReactNode, useState } from "react";
+import { createContext, PropsWithChildren, useState } from "react";
 
 type AuthContextType = {
     isLogin: boolean,
