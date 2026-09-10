@@ -14,16 +14,17 @@ export default function LngBtn() {
     <button
       className="lng-btn d-flex align-items-center border-0 text-uppercase"
       onClick={() => changeLng(nextLng)}
+      title="changeLanguage"
     >
       {i18n.language === "en" ? (
         <>
           <IR className="me-2" />
-          <span className="d-none d-lg-block">fa</span>
+          <span className="">fa</span>
         </>
       ) : (
         <>
           <US className="me-2" />
-          <span className="d-none d-lg-block">en</span>
+          <span className="">en</span>
         </>
       )}
     </button>
