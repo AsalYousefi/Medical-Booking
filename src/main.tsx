@@ -6,9 +6,11 @@ import "./main.css";
 import AuthContextProvider from "./context/AuthContext";
 import { loadBootstrap } from "./utils/bootstrap";
 
-const direction = document.documentElement.dir as "ltr" | "rtl";
+(async function startApp() {
+  const direction = document.documentElement.dir as "ltr" | "rtl";
 
-loadBootstrap(direction).then(() => {
+  await loadBootstrap(direction);
+
   const rootElement = document.getElementById("root")!;
 
   createRoot(rootElement).render(
@@ -18,4 +20,4 @@ loadBootstrap(direction).then(() => {
       </AuthContextProvider>
     </StrictMode>
   );
-});
+})()
