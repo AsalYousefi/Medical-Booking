@@ -1,5 +1,4 @@
 @import "./media-query.css";
-@import "bootstrap/dist/css/bootstrap.css";
 
 :root {
     --gray: #717275;
@@ -68,24 +67,17 @@ header {
     width: 30px;
 }
 
-.horizontal-nav {
-    justify-self: center;
-    grid-column: 2;
-}
-
-.lng-btn {
-    /* grid-column: 3; */
-    /* justify-self: end; */
-    font-size: .8rem;
-}
+/* .horizontal-nav li {
+    width: 120px;
+} */
 
 .lng-btn svg {
-    width: 1.5rem;
-    height: 1rem;
+    width: 1.7rem;
+
 }
 
-.auth-btn {
-    width: 15vw;
+.auth-btn, .lng-btn {
+    width: 60px;
 }
 
 .logo {

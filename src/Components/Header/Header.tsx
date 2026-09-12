@@ -15,8 +15,10 @@ export default function Header(props: HeaderProps) {
 
   return (
     // <header className="d-grid position-sticky top-0 start-0 w-100 z-3 p-3 py-lg-4 shadow-lg bg-light">
-    <header className="d-flex justify-content-between align-items-center position-sticky top-0 start-0 w-100 z-3 p-3 py-lg-4 shadow-lg bg-light">
-      <div className="d-none d-lg-block"><LngBtn /></div>
+    <header className="d-flex justify-content-around align-items-center position-sticky top-0 start-0 w-100 z-3 p-3 py-lg-4 shadow-lg bg-light">
+      <div className="d-none d-lg-block">
+        <LngBtn />
+      </div>
       <div
         className={`d-lg-none pointer menu-btn d-flex flex-column justify-content-between ${
           isOpen && "open"
@@ -70,15 +72,17 @@ export default function Header(props: HeaderProps) {
           })}
         </ul>
       </nav>
-      <div className="d-flex align-items-center">
-        <div><AuthBtn /></div>
-        <div className="d-lg-none"><LngBtn /></div>
-      </div>
+
+      <AuthBtn />
+
       {isOpen && (
         <div className="d-lg-none position-absolute z-3 w-100 bg-light start-0 top-100">
           <div className="container">
             <nav>
               <ul className="list-unstyled">
+                <li className="nav-item py-1 my-1">
+                  <LngBtn />
+                </li>
                 {props.navOptions.map((navOp, i) => {
                   return (
                     <li
