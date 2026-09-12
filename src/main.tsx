@@ -6,17 +6,18 @@ import "./main.css";
 import AuthContextProvider from "./context/AuthContext";
 import { loadBootstrap } from "./utils/bootstrap";
 
-const direction = document.documentElement.dir as "ltr" | "rtl";
+(async function startApp() {
+  const direction = document.documentElement.dir as "ltr" | "rtl";
 
-await loadBootstrap(direction);
+  await loadBootstrap(direction);
 
-const rootElement = document.getElementById("root")!;
+  const rootElement = document.getElementById("root")!;
 
-
-createRoot(rootElement).render(
-  <StrictMode>
-    <AuthContextProvider>
-      <App />
-    </AuthContextProvider>
-  </StrictMode>
-);
+  createRoot(rootElement).render(
+    <StrictMode>
+      <AuthContextProvider>
+        <App />
+      </AuthContextProvider>
+    </StrictMode>
+  );
+})()
