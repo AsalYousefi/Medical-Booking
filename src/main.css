@@ -58,9 +58,8 @@ header {
 }
 
 .menu-btn {
-    justify-self: start;
-    grid-column: 1;
     height: 19px;
+    margin-inline-end: 30px;
 }
 
 .menu-btn>* {
@@ -72,7 +71,7 @@ header {
 
 }
 
-.auth-btn, .lng-btn, .menu-btn {
+.auth-btn, .lng-btn {
     width: 60px;
 }
 
@@ -107,7 +106,7 @@ header {
     transform: rotate(-45deg) translate(6px, -6px);
 }
 
-.end-nav {
+.end-nav ul {
     width: 55%;
 }
 

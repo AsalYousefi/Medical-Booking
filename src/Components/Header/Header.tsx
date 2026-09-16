@@ -14,7 +14,7 @@ export default function Header({ navOptions, activeSection }: HeaderProps) {
   const { t } = useTranslation();
 
   return (
-    <header className="d-flex justify-content-around align-items-center position-sticky top-0 start-0 w-100 z-3 p-3 py-lg-4 shadow-lg bg-light">
+    <header className="d-flex justify-content-between justify-content-lg-around align-items-center position-sticky top-0 start-0 w-100 z-3 p-3 py-lg-4 shadow-lg bg-light">
       <div
         className={`d-lg-none pointer menu-btn d-flex flex-column justify-content-between ${
           isOpen && "open"
@@ -26,7 +26,7 @@ export default function Header({ navOptions, activeSection }: HeaderProps) {
         <div className="bar"></div>
         <div className="bar"></div>
       </div>
-      <nav className="d-none d-lg-flex justify-content-around align-items-center w-100">
+      <nav className="start-nav d-none d-lg-flex justify-content-around align-items-center w-100">
         <LngBtn />
         <ul className="m-0 list-unstyled d-flex justify-content-between align-items-center w-50">
           {navOptions.slice(0, 3).map((navOp, i) => (
@@ -51,8 +51,8 @@ export default function Header({ navOptions, activeSection }: HeaderProps) {
         </a>
       </h1>
 
-      <nav className="d-none d-lg-flex justify-content-around align-items-center w-100">
-        <ul className="end-nav m-0 list-unstyled d-flex justify-content-between align-items-center">
+      <nav className="end-nav d-none d-lg-flex justify-content-around align-items-center w-100">
+        <ul className="m-0 list-unstyled d-flex justify-content-between align-items-center">
           {navOptions.slice(3).map((navOp, i) => (
             <li
               key={i}
