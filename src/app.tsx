@@ -40,12 +40,13 @@ function App() {
   ];
 
   return (
-    <div className="position-relative">
+
+    <>
       <ResumeBtn />
       <Header navOptions={navOptions} activeSection={activeSection} />
       <MainSection activeSection={activeSection} />
       <Footer />
-    </div>
+    </>
   );
 }
 export default App;

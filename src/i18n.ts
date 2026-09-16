@@ -19,6 +19,7 @@ import faHome from "./locales/fa/home.json";
 import faFooter from "./locales/fa/footer.json";
 import faBooking from "./locales/fa/booking.json";
 import faResumeBtn from "./locales/fa/resumeBtn.json"
+import { loadBootstrap } from "./utils/bootstrap";
 
 i18n
   .use(LanguageDetector)
@@ -64,8 +65,10 @@ i18n
   });
 
 function changeDirection(lng: string) {
-  document.documentElement.dir = lng === "fa" ? "rtl" : "ltr";
+  const direction = lng === "fa" ? "rtl" : "ltr"
+  document.documentElement.dir = direction
   document.documentElement.lang = lng;
+  loadBootstrap(direction)
 }
 
 changeDirection(i18n.language);

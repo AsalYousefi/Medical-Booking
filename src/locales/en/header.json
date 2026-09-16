@@ -10,5 +10,6 @@
   "logo": {
     "h1": "medic care",
     "p": "health specialist"
-  }
+  },
+  "authBtn": "Login"
 }
