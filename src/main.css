@@ -106,8 +106,13 @@ header {
     transform: rotate(-45deg) translate(6px, -6px);
 }
 
+.start-nav ul {
+    min-width: 25vw;
+}
+
 .end-nav ul {
     width: 55%;
+    min-width: 30vw;
 }
 
 nav ul li {
