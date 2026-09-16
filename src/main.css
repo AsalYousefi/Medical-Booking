@@ -107,6 +107,10 @@ header {
     transform: rotate(-45deg) translate(6px, -6px);
 }
 
+.end-nav {
+    width: 55%;
+}
+
 nav ul li {
     color: var(--gray);
 }

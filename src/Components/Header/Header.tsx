@@ -34,7 +34,7 @@ export default function Header({ navOptions, activeSection }: HeaderProps) {
               key={i}
               className={`${
                 activeSection === navOp && "active"
-              } text-capitalize nav-item fw-bold`}
+              } mx- text-capitalize nav-item fw-bold`}
             >
               <a href={`#${navOp}`} className="nav-link">
                 {t(`header.nav.${navOp}`)}
@@ -52,13 +52,13 @@ export default function Header({ navOptions, activeSection }: HeaderProps) {
       </h1>
 
       <nav className="d-none d-lg-flex justify-content-around align-items-center w-100">
-        <ul className="m-0 list-unstyled d-flex justify-content-between align-items-center w-50">
+        <ul className="end-nav m-0 list-unstyled d-flex justify-content-between align-items-center">
           {navOptions.slice(3).map((navOp, i) => (
             <li
               key={i}
               className={`${
                 activeSection === navOp && "active"
-              } text-capitalize nav-item fw-bold`}
+              } me- text-capitalize nav-item fw-bold`}
             >
               <a href={`#${navOp}`} className="nav-link">
                 {t(`header.nav.${navOp}`)}
