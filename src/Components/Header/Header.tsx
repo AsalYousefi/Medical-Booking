@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 import { useTranslation } from "react-i18next";
 import LngBtn from "./LngBtn";
 import AuthBtn from "./AuthBtn";
@@ -6,10 +6,11 @@ import AuthBtn from "./AuthBtn";
 type HeaderProps = {
   navOptions: string[];
   activeSection: string;
+  setIsModalOpen: Dispatch<SetStateAction<boolean>>
 };
 
-export default function Header({ navOptions, activeSection }: HeaderProps) {
-  const [isOpen, setIsOpen] = useState(false);
+export default function Header({ navOptions, activeSection, setIsModalOpen }: HeaderProps) {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   const { t } = useTranslation();
 
@@ -17,10 +18,10 @@ export default function Header({ navOptions, activeSection }: HeaderProps) {
     <header className="d-flex justify-content-between justify-content-lg-around align-items-center position-sticky top-0 start-0 w-100 z-3 p-3 py-lg-4 shadow-lg bg-light">
       <div
         className={`d-lg-none pointer menu-btn d-flex flex-column justify-content-between ${
-          isOpen && "open"
+          isMenuOpen && "open"
         }`}
-        onClick={() => setIsOpen((prev) => !prev)}
-        style={{ transform: isOpen ? "rotate(180deg)" : "rotate(0deg)" }}
+        onClick={() => setIsMenuOpen((prev) => !prev)}
+        style={{ transform: isMenuOpen ? "rotate(180deg)" : "rotate(0deg)" }}
       >
         <div className="bar"></div>
         <div className="bar"></div>
@@ -66,11 +67,11 @@ export default function Header({ navOptions, activeSection }: HeaderProps) {
             </li>
           ))}
         </ul>
-        <AuthBtn />
+        <AuthBtn setIsModalOpen={setIsModalOpen} />
       </nav>
-      <div className="d-lg-none"><AuthBtn /></div>
+      <div className="d-lg-none"><AuthBtn setIsModalOpen={setIsModalOpen} /></div>
 
-      {isOpen && (
+      {isMenuOpen && (
         <div className="d-lg-none position-absolute z-3 w-100 bg-light start-0 top-100">
           <div className="container">
             <nav>

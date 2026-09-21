@@ -33,7 +33,7 @@ export default function Booking() {
 
   async function saveData() {
     try {
-      await axios.post("http://localhost:3000/patients", formData);
+      await axios.post("http://localhost:3000/reservations", formData);
 
       resetData();
     } catch (err) {
