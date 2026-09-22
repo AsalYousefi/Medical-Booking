@@ -34,13 +34,13 @@ export default function SignupForm({setIsModalOpen}: SignupFormProps) {
         )
         
         if (isRegistered) {
-          console.log(response.data[0], "You have already registered with this mobile.");
+          alert(t("messages.errors.signup"));
           return
         }
         await axios.post(`${API_URL}/users`, user);
         auth.setUser(user)
+        alert(t("messages.success.signup"))
         resetData();
-        auth.setIsLogin(true)
         setIsModalOpen(false)
       } catch (err) {
         if (err instanceof Error) {

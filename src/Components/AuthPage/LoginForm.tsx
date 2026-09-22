@@ -1,14 +1,21 @@
-import { ChangeEvent, Dispatch, FormEvent, SetStateAction, useContext, useState } from "react";
+import {
+  ChangeEvent,
+  Dispatch,
+  FormEvent,
+  SetStateAction,
+  useContext,
+  useState,
+} from "react";
 import { useTranslation } from "react-i18next";
 import { AuthContext, User } from "../../context/AuthContext";
 import axios from "axios";
 import { API_URL } from "../../config/api";
 
 type LoginFormProps = {
-  setIsModalOpen: Dispatch<SetStateAction<boolean>>
-}
+  setIsModalOpen: Dispatch<SetStateAction<boolean>>;
+};
 
-export default function LoginForm({setIsModalOpen}: LoginFormProps) {
+export default function LoginForm({ setIsModalOpen }: LoginFormProps) {
   const { t } = useTranslation();
   const auth = useContext(AuthContext);
   const [loginForm, setLoginForm] = useState({
@@ -16,18 +23,25 @@ export default function LoginForm({setIsModalOpen}: LoginFormProps) {
     password: "",
   });
 
-  async function login(user: {mobile: string, password: string}) {
-    const response = await axios.get(`${API_URL}/users`)
-    const isRegistered = response.data.find((existingUser: User) =>
-      existingUser.mobile === user.mobile
-    )
-    if (!isRegistered) {
-      console.log("You have not registered yet!");
-      return
+  async function login(user: { mobile: string; password: string }) {
+    const response = await axios.get(`${API_URL}/users`);
+    const existingUser = response.data.filter(
+      (existingUser: User) => existingUser.mobile === user.mobile
+    );
+    console.log(existingUser);
+
+    if (existingUser.length === 0) {
+      alert(t("messages.errors.login"));
+      return;
     }
-    auth.setIsLogin(true);
-    setIsModalOpen(false)
-    auth.setUser(response.data[0])
+
+    if (user.password === existingUser[0].password) {
+      auth.setUser(existingUser[0]);
+      alert(t("messages.success.login"));
+      setIsModalOpen(false);
+    } else {
+      alert(t("messages.errors.invalidPassword"))
+    }
   }
 
   function submitHandler(e: FormEvent<HTMLFormElement>) {
