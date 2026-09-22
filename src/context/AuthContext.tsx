@@ -9,8 +9,8 @@ export type User = {
 type AuthContextType = {
     isLogin: boolean,
     setIsLogin: Dispatch<SetStateAction<boolean>>,
-    setUser: Dispatch<SetStateAction<User>>,
-    user: User
+    setUser: Dispatch<SetStateAction<User | null>>,
+    user: User | null
 }
 
 export const AuthContext = createContext({} as AuthContextType)
