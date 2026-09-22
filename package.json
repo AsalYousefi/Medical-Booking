@@ -8,7 +8,8 @@
     "build": "tsc -b && vite build",
     "typecheck": "tsc -b",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "server": "json-server src/data/db.json"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.7.2",

@@ -1,11 +1,19 @@
 import axios from "axios";
-import { useState, type ChangeEvent, type FormEvent } from "react";
+import {
+  useContext,
+  useEffect,
+  useState,
+  type ChangeEvent,
+  type FormEvent,
+} from "react";
 import { useTranslation } from "react-i18next";
+import { API_URL } from "../../../config/api";
+import { AuthContext } from "../../../context/AuthContext";
 
 type BookingFormData = {
   fullName: string;
   email: string;
-  phone: string;
+  mobile: string;
   date: string;
   message: string;
 };
@@ -13,19 +21,34 @@ type BookingFormData = {
 export default function Booking() {
   const { t } = useTranslation();
 
+  const auth = useContext(AuthContext);
+
+  useEffect(() => {
+    if (auth.user) {
+      setFormData((prev) => {
+        return {
+          ...prev,
+          fullName: auth.user ? auth.user.fullName : "",
+          email: auth.user ? auth.user.email : "",
+          mobile: auth.user ? auth.user.mobile : "",
+        };
+      });
+    }
+  }, [auth.user]);
+
   const [formData, setFormData] = useState<BookingFormData>({
     fullName: "",
     email: "",
-    phone: "",
+    mobile: "",
     date: "",
     message: "",
   });
 
   function resetData() {
     setFormData({
-      fullName: "",
-      email: "",
-      phone: "",
+      fullName: auth.user ? auth.user.fullName : "",
+      email: auth.user ? auth.user.email : "",
+      mobile: auth.user ? auth.user.mobile : "",
       date: "",
       message: "",
     });
@@ -33,12 +56,12 @@ export default function Booking() {
 
   async function saveData() {
     try {
-      await axios.post("http://localhost:3000/patients", formData);
-
+      await axios.post(`${API_URL}/reservations`, formData);
+      alert(t("messages.success.reservation"));
       resetData();
     } catch (err) {
       if (err instanceof Error) {
-        console.log(err.message);
+        console.log("ERROR:", err.message);
       }
     }
   }
@@ -67,6 +90,7 @@ export default function Booking() {
               required
               className="form-control p-3 my-2 border-0 rounded-0 border-bottom"
               autoComplete="on"
+              disabled={auth.isLogin && true}
               onChange={(e: ChangeEvent<HTMLInputElement>) =>
                 setFormData({ ...formData, fullName: e.target.value })
               }
@@ -79,22 +103,24 @@ export default function Booking() {
               required
               className="form-control p-3 my-2 border-0 rounded-0 border-bottom"
               autoComplete="on"
+              disabled={auth.isLogin && true}
               onChange={(e: ChangeEvent<HTMLInputElement>) =>
                 setFormData({ ...formData, email: e.target.value })
               }
               value={formData.email}
             />
             <input
-              name="phone"
-              type="tel"
-              placeholder={t("booking.phone")}
+              name="mobile"
+              type="number"
+              placeholder={t("booking.mobile")}
               required
               className="form-control p-3 my-2 border-0 rounded-0 border-bottom"
               autoComplete="on"
+              disabled={auth.isLogin && true}
               onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                setFormData({ ...formData, phone: e.target.value })
+                setFormData({ ...formData, mobile: e.target.value })
               }
-              value={formData.phone}
+              value={formData.mobile}
             />
             <input
               name="date"

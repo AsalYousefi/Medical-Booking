@@ -1,0 +1,24 @@
+{
+  "h2": "Welcome to the Medical Center",
+  "p": "Log in to book and manage your appointments",
+  "form": {
+    "fullname": "full name",
+    "mobile": {
+      "label": "mobile number",
+      "placeholder": "09xxxxxxxxx"
+    },
+    "email": "email",
+    "password": "password"
+  },
+  "signup": {
+    "title": "sign up",
+    "submit": "create account",
+    "p": "Already have an account?"
+  },
+  "login": {
+    "title": "login",
+    "forgot": "Forgot your password?",
+    "submit": "login",
+    "p": "Don't have an account?"
+  }
+}

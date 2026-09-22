@@ -1,0 +1,13 @@
+{
+    "success": {
+        "signup": "Registration and login successful ✅️",
+        "login": "Login successful! ✅️",
+        "reservation": "Appointment booked successfully ✅️"
+    },
+    "errors": {
+        "invalidPassword": "Incorrect password ❌",
+        "login": "You haven't registered with this mobile number ❌",
+        "signup": "This mobile number is already registered ❌",
+        "fields": "Please fill in all fields ❌"
+    }
+}

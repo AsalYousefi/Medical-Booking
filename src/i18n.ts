@@ -10,6 +10,8 @@ import enHome from "./locales/en/home.json";
 import enFooter from "./locales/en/footer.json";
 import enBooking from "./locales/en/booking.json";
 import enResumeBtn from "./locales/en/resumeBtn.json"
+import enAuthPage from "./locales/en/authPage.json"
+import enMessages from "./locales/en/messages.json"
 
 import faHeader from "./locales/fa/header.json";
 import faAbout from "./locales/fa/about.json";
@@ -19,6 +21,9 @@ import faHome from "./locales/fa/home.json";
 import faFooter from "./locales/fa/footer.json";
 import faBooking from "./locales/fa/booking.json";
 import faResumeBtn from "./locales/fa/resumeBtn.json"
+import faAuthPage from "./locales/fa/authPage.json"
+import faMessages from "./locales/fa/messages.json"
+
 import { loadBootstrap } from "./utils/bootstrap";
 
 i18n
@@ -35,7 +40,9 @@ i18n
           timeline: enTimeline,
           booking: enBooking,
           footer: enFooter,
-          resumeBtn: enResumeBtn
+          resumeBtn: enResumeBtn,
+          authPage: enAuthPage,
+          messages: enMessages
         },
       },
       fa: {
@@ -47,7 +54,9 @@ i18n
           timeline: faTimeline,
           booking: faBooking,
           footer: faFooter,
-          resumeBtn: faResumeBtn
+          resumeBtn: faResumeBtn,
+          authPage: faAuthPage,
+          messages: faMessages
         },
       },
     },
