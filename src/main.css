@@ -420,17 +420,18 @@ footer a:hover {
     overflow-y: scroll;
 }
 
-.auth-modal {
-    width: 40%;
-    min-width: 320px;
-    inset-inline: 30%;
-    top: 10%;
+.auth-container {
+    width: 100%;
+    max-width: 550px;
+    /* inset-inline: 30%; */
+    /* top: 10%; */
     z-index: 1000;
-    position: absolute;
+    /* position: absolute; */
+    margin: 50px 10px;
 }
 
 .auth-container {
-    margin: 1em 1.5em;
+    padding: 1em 1.5em;
 }
 
 
