@@ -1,27 +1,4 @@
 {
   "reservations": [],
-  "users": [
-    {
-      "fullName": "تست ۱",
-      "mobile": "123456789",
-      "email": "test@gmail.com",
-      "password": "test1",
-      "id": "Uq_jDGGPAio"
-    },
-    {
-      "fullName": "test2",
-      "mobile": "123456789",
-      "email": "test@gmail.com",
-      "password": "test1",
-      "id": "-pYsSjFam5c"
-    },
-    {
-      "fullName": "test3",
-      "mobile": "123456789",
-      "email": "test@gmail.com",
-      "password": "123456",
-      "id": "YQt6_OwwoW0"
-    }
-  ],
-  "$schema": "./node_modules/json-server/schema.json"
+  "users": []
 }

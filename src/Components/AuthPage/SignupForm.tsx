@@ -2,6 +2,7 @@ import { ChangeEvent, Dispatch, FormEvent, SetStateAction, useContext, useState 
 import { useTranslation } from "react-i18next";
 import { AuthContext, User } from "../../context/AuthContext";
 import axios from "axios";
+import { API_URL } from "../../config/api";
 
 type SignupFormProps = {
   setIsModalOpen: Dispatch<SetStateAction<boolean>>
@@ -27,14 +28,23 @@ export default function SignupForm({setIsModalOpen}: SignupFormProps) {
 
   async function signup(user: User) {
       try {
-        await axios.post("http://localhost:3000/users", user);
+        const response = await axios.get(`${API_URL}/users`)
+        const isRegistered = response.data.find((existingUser: User) =>
+          existingUser.mobile === user.mobile
+        )
+        
+        if (isRegistered) {
+          console.log(response.data[0], "You have already registered with this mobile.");
+          return
+        }
+        await axios.post(`${API_URL}/users`, user);
         auth.setUser(user)
         resetData();
         auth.setIsLogin(true)
         setIsModalOpen(false)
       } catch (err) {
         if (err instanceof Error) {
-          console.log(err.message);
+          console.log("ERROR: ",err)
         }
       }
     }

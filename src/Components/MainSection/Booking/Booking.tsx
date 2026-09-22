@@ -1,11 +1,12 @@
 import axios from "axios";
 import { useState, type ChangeEvent, type FormEvent } from "react";
 import { useTranslation } from "react-i18next";
+import { API_URL } from "../../../config/api";
 
 type BookingFormData = {
   fullName: string;
   email: string;
-  phone: string;
+  mobile: string;
   date: string;
   message: string;
 };
@@ -16,7 +17,7 @@ export default function Booking() {
   const [formData, setFormData] = useState<BookingFormData>({
     fullName: "",
     email: "",
-    phone: "",
+    mobile: "",
     date: "",
     message: "",
   });
@@ -25,7 +26,7 @@ export default function Booking() {
     setFormData({
       fullName: "",
       email: "",
-      phone: "",
+      mobile: "",
       date: "",
       message: "",
     });
@@ -33,12 +34,12 @@ export default function Booking() {
 
   async function saveData() {
     try {
-      await axios.post("http://localhost:3000/reservations", formData);
-
+      const response = await axios.post(`${API_URL}/reservations`, formData);
+      console.log("SUCCESS:", response.data);
       resetData();
     } catch (err) {
       if (err instanceof Error) {
-        console.log(err.message);
+        console.log("ERROR:", err.message);
       }
     }
   }
@@ -85,16 +86,16 @@ export default function Booking() {
               value={formData.email}
             />
             <input
-              name="phone"
-              type="tel"
-              placeholder={t("booking.phone")}
+              name="mobile"
+              type="number"
+              placeholder={t("booking.mobile")}
               required
               className="form-control p-3 my-2 border-0 rounded-0 border-bottom"
               autoComplete="on"
               onChange={(e: ChangeEvent<HTMLInputElement>) =>
-                setFormData({ ...formData, phone: e.target.value })
+                setFormData({ ...formData, mobile: e.target.value })
               }
-              value={formData.phone}
+              value={formData.mobile}
             />
             <input
               name="date"

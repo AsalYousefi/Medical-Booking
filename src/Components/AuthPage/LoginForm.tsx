@@ -1,22 +1,46 @@
-import { FormEvent, useContext } from "react";
+import { ChangeEvent, Dispatch, FormEvent, SetStateAction, useContext, useState } from "react";
 import { useTranslation } from "react-i18next";
-import { AuthContext } from "../../context/AuthContext";
+import { AuthContext, User } from "../../context/AuthContext";
+import axios from "axios";
+import { API_URL } from "../../config/api";
 
-export default function LoginForm() {
+type LoginFormProps = {
+  setIsModalOpen: Dispatch<SetStateAction<boolean>>
+}
+
+export default function LoginForm({setIsModalOpen}: LoginFormProps) {
   const { t } = useTranslation();
-  const auth = useContext(AuthContext)
+  const auth = useContext(AuthContext);
+  const [loginForm, setLoginForm] = useState({
+    mobile: "",
+    password: "",
+  });
 
-  function login() {
-    auth.setIsLogin(true)
+  async function login(user: {mobile: string, password: string}) {
+    const response = await axios.get(`${API_URL}/users`)
+    const isRegistered = response.data.find((existingUser: User) =>
+      existingUser.mobile === user.mobile
+    )
+    if (!isRegistered) {
+      console.log("You have not registered yet!");
+      return
+    }
+    auth.setIsLogin(true);
+    setIsModalOpen(false)
+    auth.setUser(response.data[0])
   }
 
   function submitHandler(e: FormEvent<HTMLFormElement>) {
-    e.preventDefault()
-    login()
+    e.preventDefault();
+    login(loginForm);
   }
   return (
     <div className="d-flex flex-column mx-3 mt-4 mb-5">
-      <form action="" className="d-flex flex-column" onSubmit={(e) => submitHandler(e)}>
+      <form
+        action=""
+        className="d-flex flex-column"
+        onSubmit={(e) => submitHandler(e)}
+      >
         <label
           className="text-capitalize form-label text-muted"
           htmlFor="mobile"
@@ -27,6 +51,10 @@ export default function LoginForm() {
           type="number"
           className="p-2 form-control"
           placeholder={t("authPage.form.mobile.placeholder")}
+          onChange={(e: ChangeEvent<HTMLInputElement>) =>
+            setLoginForm({ ...loginForm, mobile: e.target.value })
+          }
+          value={loginForm.mobile}
         />
         <label
           className="text-capitalize form-label text-muted"
@@ -35,9 +63,13 @@ export default function LoginForm() {
           {t("authPage.form.password")}
         </label>
         <input
-          type="text"
+          type="password"
           className="p-2 form-control"
           placeholder="••••••••"
+          onChange={(e: ChangeEvent<HTMLInputElement>) =>
+            setLoginForm({ ...loginForm, password: e.target.value })
+          }
+          value={loginForm.password}
         />
         <a href="#" className="align-self-end my-2 fw-500">
           {t("authPage.login.forgot")}
