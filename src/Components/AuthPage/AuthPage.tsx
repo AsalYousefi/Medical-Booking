@@ -1,4 +1,4 @@
-import { Dispatch, SetStateAction, useState } from "react";
+import { Dispatch, SetStateAction, useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { IoMdClose } from "react-icons/io";
 import LoginForm from "./LoginForm";
@@ -23,6 +23,12 @@ export default function AuthPage({ setIsModalOpen }: AuthPageProps) {
     },
   ];
   const [activeForm, setActiveForm] = useState<Form>("login");
+  useEffect(() => {
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, []);
   return (
     <div className="auth-page">
       <div className="auth-modal d-flex justify-content-center align-items-center">
@@ -64,7 +70,6 @@ export default function AuthPage({ setIsModalOpen }: AuthPageProps) {
           )}
         </div>
       </div>
-      <div className="overlay"></div>
     </div>
   );
 }
