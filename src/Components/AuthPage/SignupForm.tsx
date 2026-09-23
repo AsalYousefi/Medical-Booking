@@ -47,11 +47,13 @@ export default function SignupForm({setIsModalOpen}: SignupFormProps) {
           console.log("ERROR: ",err)
         }
       }
+      auth.setIsPending(false)
     }
   
   
 
   function submitHandler(e: FormEvent<HTMLFormElement>) {
+    auth.setIsPending(true)
     e.preventDefault()
     const isFormComplete = Object.values(signupForm).every(
       (value) => value.trim() !== ""
