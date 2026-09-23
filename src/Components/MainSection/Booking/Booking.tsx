@@ -23,6 +23,8 @@ export default function Booking() {
 
   const auth = useContext(AuthContext);
 
+  const [isDisabled, setIsDisabled] = useState(false)
+
   useEffect(() => {
     if (auth.user) {
       setFormData((prev) => {
@@ -64,9 +66,11 @@ export default function Booking() {
         console.log("ERROR:", err.message);
       }
     }
+    setIsDisabled(false)
   }
 
   function submitHandler(e: FormEvent<HTMLFormElement>) {
+    setIsDisabled(true)
     e.preventDefault();
     saveData();
   }
@@ -148,6 +152,7 @@ export default function Booking() {
               <button
                 type="submit"
                 className="submit-btn text-uppercase border-0 text-white py-3"
+                disabled={isDisabled}
               >
                 {t("booking.btn")}
               </button>
