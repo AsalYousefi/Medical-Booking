@@ -24,27 +24,34 @@ export default function LoginForm({ setIsModalOpen }: LoginFormProps) {
   });
 
   async function login(user: { mobile: string; password: string }) {
-    const response = await axios.get(`${API_URL}/users`);
-    const existingUser = response.data.filter(
-      (existingUser: User) => existingUser.mobile === user.mobile
-    );
-    console.log(existingUser);
+    try {
+      const response = await axios.get(`${API_URL}/users`);
+      const existingUser = response.data.filter(
+        (existingUser: User) => existingUser.mobile === user.mobile
+      );
+      console.log(existingUser);
+  
+      if (existingUser.length === 0) {
+        alert(t("messages.errors.login"));
+        return;
+      }
+  
+      if (user.password === existingUser[0].password) {
+        auth.setUser(existingUser[0]);
+        alert(t("messages.success.login"));
+        setIsModalOpen(false);
+      } else {
+        alert(t("messages.errors.invalidPassword"))
+      }
 
-    if (existingUser.length === 0) {
-      alert(t("messages.errors.login"));
-      return;
+    } catch (err) {
+      console.log("ERROR: ", err)
     }
-
-    if (user.password === existingUser[0].password) {
-      auth.setUser(existingUser[0]);
-      alert(t("messages.success.login"));
-      setIsModalOpen(false);
-    } else {
-      alert(t("messages.errors.invalidPassword"))
-    }
+    auth.setIsPending(false)
   }
 
   function submitHandler(e: FormEvent<HTMLFormElement>) {
+    auth.setIsPending(true)
     e.preventDefault();
     login(loginForm);
   }
@@ -91,6 +98,7 @@ export default function LoginForm({ setIsModalOpen }: LoginFormProps) {
         <button
           type="submit"
           className="bg-primary text-white rounded-1 border-0 py-2 text-capitalize fw-bold mt-2"
+          disabled={auth.isPending}
         >
           {t("authPage.login.submit")}
         </button>
