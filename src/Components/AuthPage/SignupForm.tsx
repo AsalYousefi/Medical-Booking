@@ -128,6 +128,7 @@ export default function SignupForm({setIsModalOpen}: SignupFormProps) {
         <button
           type="submit"
           className="bg-primary text-white rounded-1 border-0 py-2 text-capitalize fw-bold mt-2"
+          disabled={auth.isPending}
         >
           {t("authPage.signup.submit")}
         </button>
